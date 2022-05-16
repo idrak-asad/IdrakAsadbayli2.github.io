@@ -1,0 +1,68 @@
+
+<div class="container-fluid">
+<div class="row">
+   <div class="col-lg-3 logo_section">
+      <style>
+         .avatar2 {
+           vertical-align: middle;
+           width: 120px;
+           height: 120px;
+           border-radius: 50%;
+         }
+         </style>
+           
+         <img src="images/my_foto_1.jpg" alt="Avatar" class="avatar2">
+      
+   </div>
+   <div class="col-lg-9">
+      <div class="menu-area">
+         <div class="limit-box">
+            <nav class="main-menu">
+               <ul class="menu-area-main">
+                  <li class="active">
+                     <a href="index.html">Home</a>
+                  </li>
+                  
+                  
+                  <li>
+                     <a href="#">My projects</a>
+                  </li>
+                  <li>
+                     <a href="#">Programming test</a>
+                  </li>
+                  <li>
+                     <a href="blog.html">Blog</a>
+                  </li>
+                  <li>
+                     <a href="contact.html">Contact Me</a>
+                  </li>
+                  <li>
+                     <a href="about.html">About me</a>
+                  </li>
+                  <!--
+                  <li>
+                     <a href="marketing.html">#</a>
+                  </li>
+                  <li>
+                     <a href="blog.html">#</a>
+                  </li>
+                  <li>
+                     <a href="contact.html">#</a>
+                  </li>
+                  <li>
+                     <a href="#">#</a>
+                  </li>
+                  <li>
+                     <a href="#">#</a>
+                  </li>
+                  -->
+                  <li>
+                     <a href="#"><img src="images/search_icon.png" alt="#" /></a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
