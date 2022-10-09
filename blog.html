@@ -1,7 +1,8 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
    <head>
+      <title>Idrak Asadbayli</title>
       <style>
          /* Initially, hide the extra text that
              can be revealed with the button */
@@ -37,22 +38,19 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   
-   <!-- body -->
-   <body class="main-layout">
-      
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="" /></div>
-      </div>
-      <!-- end loader -->
-      <!-- header -->
       <header>
          <!-- header inner -->
          <script src="start_line.html "></script>
          <!-- end header inner -->
       </header>
+   </head>
+   
+   <!-- body -->
+   <body class="main-layout">
+      
+      
+      <!-- header -->
+      
       <!-- end header -->
       <!-- revolution slider -->
       
@@ -65,19 +63,33 @@
  
       <script>
          function first_load() {
-         
-            let left_text="<h3>MatPlotLib</h3>"
-            const matplotlib=["MatPlotLib kitabxanasına giriş", "MatPlotLibin plot() funksiyası"];
+
+            let left_text=""
+            const left_db ="<h3>DataBase</h3>"
+            const db = ["Təkrarlanmayan təsadufi data yaratmaq"]
+            const left_ml = "<h3>Machine Learning</h3>"
+            const ml = ["Xətti reqressiya", "Python ilə Sadə Xətti Regressiya", "Real data üzərində Linear Reqression", "Hierarchical Clustering"]
+            const left_plot="<h3>MatPlotLib</h3>"
+            const matplotlib=["MatPlotLib kitabxanasına giriş", "MatPlotLibin plot() funksiyası", "MatPlotLibdə koordinat sisteminin ölçüləndirilməsi"];
             const left_list=["NumPy kitabxanası","NumPy ilə massivin yaradılması", "NumPyda massivin ölçüsü",
          "NumPy massivində indekslərlə iş", "NumPy massivində axtarış funksiyaları","NumPy massviləri üzərində riyazi əməllər (part 1)",
       "NumPy massviləri üzərində riyazi əməllər (part 2)"];
 
-            const datas=["Data analizin əsasları", "Data analiz alətləri", "Data tiplər"];
+            const datas=["Kohort (Cohort) analiz nədir", "Data analizin əsasları", "Data analiz alətləri", "Data tiplər"];
             
             const left_numpy='<h3>NumPy</h3>'
             const left_start='<button class=\"w3-button w3-bar-item\" type=\"button\" onclick=\"data_loadding(\''
             const left_line='\')\">'
-            const left_end='</button>'
+            const left_end='</button><br>'
+            left_text+=left_db
+            for (let i of db){
+               left_text+=left_start+i+left_line+i+left_end
+            }
+            left_text+=left_ml
+            for (let i of ml){
+               left_text+=left_start+i+left_line+i+left_end
+            }
+            left_text+=left_plot
             for (let i of matplotlib){
                left_text+=left_start+i+left_line+i+left_end
             }
@@ -106,17 +118,17 @@
                document.getElementById("main_text").innerHTML = "Matplotlib verilənləri vizullaşdıran Python kitabxanasıdır, John D. Hunter tərəfindən yaradılmışdır və açıq mənbəlidir. Matplotlib daha çox Pythonda, bir neçə müxtəlif platforma uyğunluğu üçün C, Objective-C və Javascript dillərində yazılmışdır. Bu kityabxana vasitəsilə 2D və 3D qrafiklər çəkilə bilər. ";
                document.getElementById("img2").src = "" ;
                document.getElementById("text2").innerHTML = "Matplotlibdə fiqur və onun üzərində qurulan kordinat sistemi aşağıdakı nümunədəki kimi olur.";
-               document.getElementById("img3").src = "images/blog_plt_3.png" ;
+               document.getElementById("img3").src = "images2/blog_plt_3.png" ;
                document.getElementById("text3").innerHTML = "Matplotlibi pip  install və ya easy_install  əmirləri ilə yükləmək olar. Əgər Anaconda platformasından  istifadə edirsinizsə, o zaman kitabxananı yükləməyə ehtiyac yoxdur. Bu platformanı yükləyən zaman Matplotlib kitabxanası da yüklənmiş olur. ";
                document.getElementById("img4").src = "" ;
                document.getElementById("text4").innerHTML = "Kitabxananı proyektə daxil etmək üçün import  əmrindən istifadə olnur. __version__ əmri ilə isə kitabxananın hansı versiya olduğunu görmək olar. Aşağıdakı nümunədə də göründüyü kimi kodun yazıldığı kompüterdə 3.2.2 verisiyası quraşdırılmışdır. ";
-               document.getElementById("img5").src = "images/blog_plt_5.png" ;
+               document.getElementById("img5").src = "images2/blog_plt_5.png" ;
                document.getElementById("text5").innerHTML = "Matplotlibin əsas kitabxanaları pyplot  obyekti altındadır. Bu kitabxanaın qeyd edilən obyektlə birlikdə qısaltması kimi plt  sözündən istifadə edilir. Qısaltma məcburi deyil, dəyişmək də mümkündür. Bu kitabxananı istifadə edərək massiv kimi NumPy masivlərini istifadə etmək daha məqsədə uyğundur. İlk qrafikimizi çəkmək üçün x və y koordinatlarının başlanğıc və son nöqtələrini qeyd edirik. plot()  funksiyasına birinci x, ikinci y olmaqla koordinatları daxil edirik. Sonda isə show()  funksiyası ilə qrafikin ekranda görünməsini təmin edirik. İki nöqtədən bir düz xətt keçdiyi üçün çəkdiyimiz qrafik verdiyimiz qiymətlər arasında düz xətt oldu.  ";
-               document.getElementById("img6").src = "images/blog_plt_6.png" ;
+               document.getElementById("img6").src = "images2/blog_plt_6.png" ;
                document.getElementById("text6").innerHTML = "x və y qiymətlərinin kəsişməsini görmək üçün tor yaradılır ki, bu toru yaratmaq üçün də grid() funksiyasından istifadə edilir. Bu tor qrafinlərin arxasınada görünür və pryektlərin oxunaqlığını artırır.";
-               document.getElementById("img7").src = "images/blo_plt_7.png" ;
+               document.getElementById("img7").src = "images2/blof_plt_7.png" ;
                document.getElementById("text7").innerHTML = "Matplotlib Jupyter  notebook mətn redaktoru qrafikdən istifadəni asanlaşdırmaq üçün %matplotlib  imkanını təqdim edir. Bu imkan inline  və notebook  dəyərlərini alır. Inline qiyməti ilkin qiymət olduğu üçün yazmadan da istifadə etmək olur və yuxarıdakı nümunələr inline ilə göstərilmişdir. Notebook  dəyəri isə qrafikin imkanlarını artırır. Qrafiki böyütmək, kursorun dayandığı koordinatları dəqiqliklə göstərmək kimi imkanlar təqdim edir.";
-               document.getElementById("img8").src = "images/blog_plt_8.png" ;
+               document.getElementById("img8").src = "images2/blog_plt_8.png" ;
                document.getElementById("text8").innerHTML = "Nümunədən göründüyü kimi qrafikin yuxarısında onun adı, sağında isə notebook rejiminin başlama düyməsi yerləşir. Qrafikin aşağı hissədində 6 ədəd düymə və sağda üçbucaqlı formasında bir işarə var. Ev işarəsi edilən dəyişiklikləri sıfırlayıb ilkin vəziyyətinə qaytarır. Sola ox işarəsi edilən dəyişikləri bir əvvəlki vəziyyətinə qaytarır. Sağa ox işarə sola oxun axırıncı etdiyini ləğv edir. Dörd istiqamətdə olan oxları seçdikdən sonra qrafiki istənilən istiqmətə sürüşdürmək olar. Dördbucaq işarəsi mausla ekranda seçilmiş hissəni yaxınlaşdırır. Axırıcnı işarə ilə isə qrafiki yaddaşa vermək mümkündür. Yaddaşa verən zaman qrafikdə müəyyən dəyişikliklər edilmişdirsə, o zaman dəyişiklik edilmiş qrafiki yaddaşa verir. Qrafik yaddaşda .png  uzantılı şəkil formatında qalır. Sağdakı üçbucaqlı ilə bütün çərçivənin ölçüsünü dəyişmək mümkündür. ";
                document.getElementById("img9").src = "" ;
                document.getElementById("text9").innerHTML = "";
@@ -129,17 +141,17 @@
             else if(name=='MatPlotLibin plot() funksiyası'){
                document.getElementById("Info").innerHTML = "MatPlotLibin plot() funksiyası";
                document.getElementById("date_time").innerHTML = "Published on February 16 2022";
-               document.getElementById("main_img").src = "images/blog_matplotlib1.png" ;
+               document.getElementById("main_img").src = "images2/blog_matplotlib1.png" ;
                document.getElementById("main_text").innerHTML = "Bu funksiya ilə ilk tanışlığımız öncəki məqalədə oldu. plot()  funksiyasına təkcə y qiymətləri də vermək olar ki, bu zaman x qiymətlərini avtomatik seçir və hər növbəti qiymət 1 vahid artır. Əgər y koordinatına ikidən çox qiymət versək qırıq-qırıq xətlərlə bu nöqtələri birləşdirəcəkdir.";
-               document.getElementById("img2").src = "images/blog_plot_2.png" ;
+               document.getElementById("img2").src = "images2/blog_plot_2.png" ;
                document.getElementById("text2").innerHTML = "Əgər müəyyən bir əyri xətt vermək istəsək, bu zaman x və y dəyərləri bir-birinə yaxın və çoxlu sayda olmalıdır. Bu cür olduqda xəttin qırıq olduğunu yox, əyri şəklində bütov bir xətt olduğunu görərik. y=x*x  funksiyasını qurmaq istədikdə aşağıdakı kimi edə bilərik. Bu zaman x-ə çoxlu sayda, y-ə isə x-in kvadratı qiymətlərini veririk. ";
-               document.getElementById("img3").src = "images/blog_plot_3.png" ;
+               document.getElementById("img3").src = "images2/blog_plot_3.png" ;
                document.getElementById("text3").innerHTML = "Bu üsulla y = sin(x) funksiyasını də qura bilərik. ";
-               document.getElementById("img4").src = "images/blog_plot_4.png" ;
+               document.getElementById("img4").src = "images2/blog_plot_4.png" ;
                document.getElementById("text4").innerHTML = "plot() funksiyası ilə təkcə qrafiklər yox, x və y-in kəsişmə nöqtələrini də qeyd etmək olar. Bu zaman plot()  funksiyasına əlavə bir dəyər də vermək lazımdır.";
-               document.getElementById("img5").src = "images/blog_plot_5.png" ;
+               document.getElementById("img5").src = "images2/blog_plot_5.png" ;
                document.getElementById("text5").innerHTML = "Bir koordinat sistemində 1-dən çox qrafik çəkmək istədikdə plot() funksiyasını da artırmaq lazımdır. ";
-               document.getElementById("img6").src = "images/blog_plot_6.png" ;
+               document.getElementById("img6").src = "images2/blog_plot_6.png" ;
                document.getElementById("text6").innerHTML = "";
                document.getElementById("img7").src = "" ;
                document.getElementById("text7").innerHTML = "";
@@ -157,7 +169,7 @@
                document.getElementById("Info").innerHTML = "NumPy kitabxanası";
                document.getElementById("date_time").innerHTML = "Published on January 24 2022";
                
-               document.getElementById("main_img").src = "images/blog_numpy7.jpg";
+               document.getElementById("main_img").src = "images2/blog_numpy7.jpg";
                document.getElementById("main_text").innerHTML = "NumPy 2005-ci ildə Travis Oliphant (amerikan data alimi və iş adamı) tərəfindən masssivlərlə işləmək üçün yaradılmış açıq mənbəli kitabxanadır. Açılışı Numerical Python (NumPy) olan bu kitabxana n ölçülü massivlərlə işləyə bilməklə yanaşı, həmçinin Xətti Cəbrin məsələlərini həll etmək üçün imkanlar təklif edir. ";
                document.getElementById("img2").src = "" ;
                document.getElementById("text2").innerHTML = "NumPy massivləri Pythonun siyahı (list) data tipindən daha sürətli işləyir. NumPy dəstəkçiləri bu kitabxananın siyahı tipindən təqribən 50 dəfə sürətli işləyən bir sistem təmin etməyi hədəflədiklərini bildirirlər. Bu kitabxana siyahılardan fərqli olaraq massivləri yaddaşda sabit bir yerdə saxlayır, bununla da oxuma və dəyişdirmə əməliyyatlarının daha  sürətli icrasını təmin edir. Əlavə olaraq, NumPy ən son CPU arxitekturaları ilə işləmək üçün optimalaşdırılmışdır. Digər bir üstünlüyü isə ondan ibarətdir ki, onun əsas hissəsi C və C++ kimi sürətli dillərdə yazılmışdır.";
@@ -165,11 +177,11 @@
                document.getElementById("text3").innerHTML = "<h4>NumPy kitabxanasının əsas üstünlükləri:</h4><br>- <i>Ndarray:</i> Çox ölçülü bir massivdir, Pythonun siyahılarından daha sürətli və daha səmərəlidir. <br>- <i>Elementlər üzərində əməllər: </i> Bu tip hesablamaları massivlər və massivlər arasındakı riyazi əməliyyatlarla yerinə yetirmək üçün bir sıra funksiyaları var. <br>- <i>Oxuma-yazma imkanları:</i> Sabit diskdə saxlanılan məlumatları oxumaq və yazmaq üçün bir sıra alətləri var. <br>- <i>C, C ++ və FORTRAN kimi digər dillər ilə inteqrasiya</i>: Bu proqramlaşdırma dilləri ilə hazırlanmış kodu inteqrasiya etmək üçün bir sıra alətləri var.";
                document.getElementById("img4").src = "" ;
                document.getElementById("text4").innerHTML = "<h3>NumPy-ın quraşdırılması</h3><br>Data elmi ilə məşğul olanlar bir çox kitabxanaların, alətlərin cəmləşdiyi platforma olan Anacondaya tez-tez müraciət edirlər. Məhz bu platformada bir çox kitabxanalar hazır paketdə istifadə oluna bilinir ki, bunlara NumPy da daxildir. <br><br>Yox əgər, Anaconda paketindən istifadə etmirsinizsə, onda NumPy kitabxanası ilə işləmək üçün öncə onu terminal rejimində pip install və ya easy_install əmirlərindən birini istifadə etməklə quraşdırmaq lazımdır. Pythonun paket menecerləri barədə haqqında ətraflı buradan oxuya bilərsiniz. <br><br>Hər iki quraşdırma qaydası üçün nümunə aşağıda verilmişdir:";
-               document.getElementById("img5").src = "images/blog_numpy7_5.png" ;
+               document.getElementById("img5").src = "images2/blog_numpy7_5.png" ;
                document.getElementById("text5").innerHTML = "Kitabxananı quraşdırdıqdan sonra sonra proqramımızda istifadə etmək üçün onu import etməliyik. Daxiletmə qaydası aşağıdakı kimidir:";
-               document.getElementById("img6").src = "images/blog_numpy7_6.png" ;
+               document.getElementById("img6").src = "images2/blog_numpy7_6.png" ;
                document.getElementById("text6").innerHTML = "NumPy kitabxanasını yuxarıdakı hər iki üsulla da daxil etmək olar ancaq ikinci üsul proqramçıların ən çox seçdiyi üsuldur. np qısaltmasının seçilməsi bir NumPy adət-ənənəsidir. Siz başqa qısaltmalardan da istifadə edə bilərsiniz.<br><br>NumPy-ın cari versiyasını öyrənmək üçün isə aşağıdakı üsuldan istifadə edə bilərsiniz:";
-               document.getElementById("img7").src = "images/blog_numpy7_7.png" ;
+               document.getElementById("img7").src = "images2/blog_numpy7_7.png" ;
                document.getElementById("text7").innerHTML = "Göründüyü kimi, bu kodun yazıldığı kompüterdə 1.19.0 versiyası quraşdırılıb. Sizin versiyanız fərqli ola bilər, lakin bunun elə də böyük əhəmiyyəti yoxdur. NumPy kimi böyükhəcmli kitabxanalarda müxtəlif versiyalar arasında cüzi fərqlər olur.";
                document.getElementById("img8").src = "" ;
                document.getElementById("text8").innerHTML = "";
@@ -184,21 +196,21 @@
                document.getElementById("Info").innerHTML = "NumPy ilə massivin yaradılması";
                document.getElementById("date_time").innerHTML = "Published on January 26 2022";
                
-               document.getElementById("main_img").src = "images/blog_numpy6.jpg";
+               document.getElementById("main_img").src = "images2/blog_numpy6.jpg";
                document.getElementById("main_text").innerHTML = "NumPy ilə massiv yaratmaq üçün aşağıdakı funksiyalardan istifadə edilir:<br><br>array() - verilən dəyərlər ilə massiv yaradır.";
-               document.getElementById("img2").src = "images/blog_numpy6_1.png";
+               document.getElementById("img2").src = "images2/blog_numpy6_1.png";
                document.getElementById("text2").innerHTML = "zeros() - verilmiş ölçüdə sıfır dəyərlərdən ibarət massiv yaradır.";
-               document.getElementById("img3").src = "images/blog_numpy6_3.png" ;
+               document.getElementById("img3").src = "images2/blog_numpy6_3.png" ;
                document.getElementById("text3").innerHTML = "ones() - verilmiş ölçüdə bir dəyərlərdən ibarət massiv yaradır.";
-               document.getElementById("img4").src = "images/blog_numpy6_4.png" ;
+               document.getElementById("img4").src = "images2/blog_numpy6_4.png" ;
                document.getElementById("text4").innerHTML = "arange() - pythonun range() funksiyasına oxşayır. start, stop və step dəyərlərini qəbul edir. İlkin dəyər olaraq start dəyəri 0, step dəyəri isə 1-dir.";
-               document.getElementById("img5").src = "images/blog_numpy6_5.png" ;
+               document.getElementById("img5").src = "images2/blog_numpy6_5.png" ;
                document.getElementById("text5").innerHTML = "arange() - pythonun range() funksiyasına oxşayır. start, stop və step dəyərlərini qəbul edir. İlkin dəyər olaraq start dəyəri 0, step dəyəri isə 1-dir.";
-               document.getElementById("img6").src = "images/blog_numpy6_6.png" ;
+               document.getElementById("img6").src = "images2/blog_numpy6_6.png" ;
                document.getElementById("text6").innerHTML = "linspace() - verilən aralıqda n sayda elementdən ibarət massiv yaradır. start, stop, n dəyərlərini qəbul edir.";
-               document.getElementById("img7").src = "images/blog_numpy6_7.png" ;
+               document.getElementById("img7").src = "images2/blog_numpy6_7.png" ;
                document.getElementById("text7").innerHTML = "reshape() - massivin ölçüsün dəyişmək üçün istifadə edilir.";
-               document.getElementById("img8").src = "images/blog_numpy6_8.png" ;
+               document.getElementById("img8").src = "images2/blog_numpy6_8.png" ;
                document.getElementById("text8").innerHTML = "";
                document.getElementById("img9").src = "" ;
                document.getElementById("text9").innerHTML = "";
@@ -211,25 +223,25 @@
                document.getElementById("Info").innerHTML = "NumPyda massivin ölçüsü";
                document.getElementById("date_time").innerHTML = "Published on January 29 2022";
                
-               document.getElementById("main_img").src = "images/blog_numpy5.jpg";
+               document.getElementById("main_img").src = "images2/blog_numpy5.jpg";
                document.getElementById("main_text").innerHTML = "Massivlər ölçüsünə görə bir-birindən fərqlənirlər. NumPyda 0 dan n-ə qədər istənilən ölçüldə massiv yaratmaq mümündür. 0 ölçülü massivi (0 - D Array) yaradan zaman düz mötərizəyə ([ ]) ehtiyac yoxdur. Aşağıdakı nümunəyə baxaq:";
-               document.getElementById("img2").src = "images/blog_numpy5_2.png" ;
+               document.getElementById("img2").src = "images2/blog_numpy5_2.png" ;
                document.getElementById("text2").innerHTML = "0 ölçülü massiv yuxarıda görundüyü kimi yalnız bir dəyər qəbul edir. <br><br>1 ölçülü massiv (1 - D Array) bir sətirdən ibarət birdən çox dəyər alır. Aşağıdakı şəkildə 5 elementdən ibarət 1 ölçülü massiv nümunəsi verilmişdir.";
-               document.getElementById("img3").src = "images/blog_numpy5_3.png" ;
+               document.getElementById("img3").src = "images2/blog_numpy5_3.png" ;
                document.getElementById("text3").innerHTML = "Bu nümunədəki massivi yaratmaq üçün bir ədəd düz mötərizə istifadə edilir. ";
-               document.getElementById("img4").src = "images/blog_numpy5_4.png" ;
+               document.getElementById("img4").src = "images2/blog_numpy5_4.png" ;
                document.getElementById("text4").innerHTML = "2 ölçülü massiv (2 - D Array) n sayda 1 ölçülü massivin birləşməsindən əmələ gəlir. 2 ölçülü massiv həm sütunlardan, həm də sətirlərdən ibarət olur. Aşağıdakı nümunədə 4 sütun və 3 sətirdən ibarət bir massiv verilmişdir.";
-               document.getElementById("img5").src = "images/blog_numpy5_5.png" ;
+               document.getElementById("img5").src = "images2/blog_numpy5_5.png" ;
                document.getElementById("text5").innerHTML = "Bu massivə əlavə nümunələr kimi cədvəlləri göstərmək olar. Bu massivi yaratmaq üçün düz mötərizəsinin içində n sayda düz mötərizə olmalıdır. Burada, n>=1 olmalıdır. Yuxarıdakı nümunəyə uyğun 2 ölçülü massiv yaradaq:";
-               document.getElementById("img6").src = "images/blog_numpy5_6.png" ;
+               document.getElementById("img6").src = "images2/blog_numpy5_6.png" ;
                document.getElementById("text6").innerHTML = "3 ölçülü massivdə (3 - D Array) n sayda 2 ölçülü massiv kimi təsəvvür etmək olar. Kub fiqurunu 3 ölçülü massivə misal çəkmək olar.";
-               document.getElementById("img7").src = "images/blog_numpy5_7.png" ;
+               document.getElementById("img7").src = "images2/blog_numpy5_7.png" ;
                document.getElementById("text7").innerHTML = "Bu massivi iç-içə 3 ədəd düz mötərizədən istifadə edilir. Aşağıdakı nümunədən də görünüyü kimi oxunaqlı olması üçün mötərizələri alt-alta yaza bilərik. ";
-               document.getElementById("img8").src = "images/blog_numpy5_8.png" ;
+               document.getElementById("img8").src = "images2/blog_numpy5_8.png" ;
                document.getElementById("text8").innerHTML = "Əgər daha böyük ölçülü massiv yaratmaq istəsək, iç-içə mötərizələrin sayını artıra bilər və ya ndmin  dəyişənindən istifadə edə bilərik. ndmin  dəyişəninə verdiyimiz qiymətə uyğun ölçüdə massiv yaradır. Aşağıdakı nümunədə 6 ölçülü massiv yaratdıq: ";
-               document.getElementById("img9").src = "images/blog_numpy5_9.png" ;
+               document.getElementById("img9").src = "images2/blog_numpy5_9.png" ;
                document.getElementById("text9").innerHTML = "İstənilən ölçülü massiv yarada bilsək də bunlardan ən çox istifadə ediləni 1 ölçülü və 2 ölçülü massivlərdir. Çünki bu iki növ massiv istifadə üçün daha asandır. Bu səbəbdən də əksər istifadəçilər məsələnin həlli üçün böyük ölçülü massivləri daha aşağı ölçülü massivlərə yuvarlaqlaşdırır. <br><br>Massivin ölçüsünü öyrənmək üçün ndim  əmrindən istifadə edilir. ";
-               document.getElementById("img10").src = "images/blog_numpy5_10.png" ;
+               document.getElementById("img10").src = "images2/blog_numpy5_10.png" ;
                document.getElementById("text10").innerHTML = "Yuxarıdakı misalda nəticə 2 alındı və bu onu göstəir ki, bu massiv iki ölçülü massivdir. ";
                document.getElementById("img11").src = "" ;
                document.getElementById("text12").innerHTML = "";
@@ -238,25 +250,25 @@
                document.getElementById("Info").innerHTML = "NumPy massivində indekslərlə iş ";
                document.getElementById("date_time").innerHTML = "Published on February 01 2022";
                
-               document.getElementById("main_img").src = "images/blog_numpy4.jpg";
+               document.getElementById("main_img").src = "images2/blog_numpy4.jpg";
                document.getElementById("main_text").innerHTML = "Proqramlaşdırma dillərində indeksləmə 0-dan başladığı kimi NumPy-da da 0-dan başlayır. İndekslər vasitəsi ilə seçilmiş ünvana veriləni əlavə edə və ya onu oxuya bilərik. Həmçinin birdən çox indeks üzərində eyni zamanda iş görə bilərik. Verilənin indeksdən oxunması ilə bağlı nümunəyə baxaq: ";
-               document.getElementById("img2").src = "images/blog_numpy4_2.png";
+               document.getElementById("img2").src = "images2/blog_numpy4_2.png";
                document.getElementById("text2").innerHTML = "arr massivinin ilk, yəni 0-cı elementi 1 olduğu üçün bu indeksi oxumaq istədikdə nəticə 1 olur. <br><br>2 ölçülü massivdə isə bir indeksə müraciət etmək üçün iki fərqli ədəddən istifadə etmək lazımdır. Massivin ölçüsü neçədirsə, onun indekslərini də oxumaq və ya məlumat əlavə etmək üçün massivin ölçüsü qədər ədədə ehtiyac olur. Aşağıdakı nümunə ilə 2 ölçülü massivə baxaq:";
-               document.getElementById("img3").src = "images/blog_numpy4_3.png";
+               document.getElementById("img3").src = "images2/blog_numpy4_3.png";
                document.getElementById("text3").innerHTML = "Yuxarıdakı nümunədə birinci indeks sətrin nömrəsini, ikinci indeks isə sütunun nömrəsini göstərir. Burada 0-cı sətir 1-ci sütunda yerləşən 2 rəqəmidir.<br><br>İndeks mənfi qiymət də ala bilər. Mənfi qiymət aldıqda sayma sağdan sola doğru gedir və sağdan birinci element -1-dir. Aşağıdakı nümunədə bunu daha aydın görmək olar. ";
-               document.getElementById("img4").src = "images/blog_numpy4_4.png";
+               document.getElementById("img4").src = "images2/blog_numpy4_4.png";
                document.getElementById("text4").innerHTML = "NumPyda indekslər ilə birdən çox element üzərində eyni anda əməliyyatlar aparmaq olur. Bunun üçün qoşa nöqtədən (:) istifadə edilir. Qruluşu arr[başlanğıc  : son : addım] şəklindədir. Hesablanma başlanğıc ≤ indekslər < son kimi aparılır. Başlanğıc dəyər seçilmədikdə 0, son dəyər seçilmədikdə maksimum, addım seçilmədikdə isə 1 qəbul olunur. Aşağıdakı nümunədə bu daha aydın görünür. ";
-               document.getElementById("img5").src = "images/blog_numpy4_5.png";
+               document.getElementById("img5").src = "images2/blog_numpy4_5.png";
                document.getElementById("text5").innerHTML = "Yuxarıdakı nümunədən də göründüyü kimi 2-ci, 3-cü və 4-cü indekslərdəki məlumatlar oxundu. ";
-               document.getElementById("img6").src = "images/blog_numpy4_6.png";
+               document.getElementById("img6").src = "images2/blog_numpy4_6.png";
                document.getElementById("text6").innerHTML = "Yuxarıdakı nümunədə addım 2 götürülüb, ona görə də 2-ci, 4-cü, 6-cı, 8-ci və 10-cu indekslər seçilib. <br><br>Başlanğıc və son indekslərdən hər hansı biri qeyd edilə bilər və ya heç biri qeyd edilməyə bilər. ";
-               document.getElementById("img7").src = "images/blog_numpy4_7.png";
+               document.getElementById("img7").src = "images2/blog_numpy4_7.png";
                document.getElementById("text7").innerHTML = "İstənilən dəyəri mənfi də qeyd etmək olar. Başlanğıc və son dəyərləri qeyd etməyib addımı -1 qeyd etsək massivi sağdan sola oxuyarıq. Yaranan yeni matriksə invers matriks deyilir.";
-               document.getElementById("img8").src = "images/blog_numpy4_8.png";
+               document.getElementById("img8").src = "images2/blog_numpy4_8.png";
                document.getElementById("text8").innerHTML = "İndeksdəki verilənin dəyişilməsi üçün indeksi seçib ona yeni verilən mənimsətmək lazımdır. Bu aşağıdakı üsulla edilir: ";
-               document.getElementById("img9").src = "images/blog_numpy4_9.png";
+               document.getElementById("img9").src = "images2/blog_numpy4_9.png";
                document.getElementById("text9").innerHTML = "Massivin birdən çox veriləninini eyni anda dəyişdirmək də mümkündür. Amma bu zaman bütün indekslərə eyni verilən mənimsədilir. ";
-               document.getElementById("img10").src = "images/blog_numpy4_10.png";
+               document.getElementById("img10").src = "images2/blog_numpy4_10.png";
                document.getElementById("text10").innerHTML = "";
                document.getElementById("img11").src = "" ;
                document.getElementById("text12").innerHTML = "";
@@ -265,19 +277,19 @@
                document.getElementById("Info").innerHTML = "NumPy massivində axtarış funksiyaları";
                document.getElementById("date_time").innerHTML = "Published on February 05 2022";
                
-               document.getElementById("main_img").src ="images/blog_numpy3.jpg";
+               document.getElementById("main_img").src ="images2/blog_numpy3.jpg";
                document.getElementById("main_text").innerHTML = "NumPy massivində elemetləri axtarmaq üçün where()  funksiyasından istifadə edilir. Bu funsiyaya massiv və axtarılan element daxil edilir, nəticə olaraq isə elemetin indeks nömrəsi və data tipi göstərilir. Əgər qeyd edilən element massiv daxilində təkrarlanırsa bütün təkrarlanan elemetlərin indeksini göstərir. Bu funksiyanın quruluşu where(arr==element) şəklindədir.  ";
-               document.getElementById("img2").src = "images/blog_numpy3_2.png";
+               document.getElementById("img2").src = "images2/blog_numpy3_2.png";
                document.getElementById("text2").innerHTML = "Massivdə element axtararkən müəyyən riyazı ifadələr də yazmaq mümkündür. ";
-               document.getElementById("img3").src = "images/blog_numpy3_3.png";
+               document.getElementById("img3").src = "images2/blog_numpy3_3.png";
                document.getElementById("text3").innerHTML = "Massivdə element axtarmağın bir başqa növü də searchsorted() funksiyasıdır. Bu funksiya elemetləri sıralanmış massiv üzərində axtarış edir. Bu axtarış qaydası sürətli axtarış üçündür. Əgər massivin elemetləri sıralanmamışdırsa, nəticə düzgün olmaya bilər. ";
-               document.getElementById("img4").src = "images/blog_numpy3_4.png";
+               document.getElementById("img4").src = "images2/blog_numpy3_4.png";
                document.getElementById("text4").innerHTML = "searchsorted() funksiyası side  dəyişəni də qəbul edir. Bu dəyişənlə axtarışın soldan sağa və ya əksinə, sağdan sola aparılmasını təmin edə bilir. Əgər axtardığınız elementin sağa yaxın olduğuna əminsinizsə, axtarış sürətini artırmaq üçün sağdan axtarış edə bilərsiniz. Bunu etmək üçün side  dəyişənin “left” və ya “right” verilənlərindən birini mənimsətmək lazımdır. İlkin dəyər “left” dəyişənidir. Sağdan sola axtarış edildikdə axtardığımız elementin indeksindən bir vahid böyük indeks nömrəsi qaytarılır.  <br><br>Massivin ən böyük elementini və ya ən kiçik elementini də tapmaq mümkündür. Ən böyük elementi tapmaq üçün max() və ən kiçik elementi tapmaq üçün min() funksiyalarından istifadə edilir.";
-               document.getElementById("img5").src = "images/blog_numpy3_5.png";
+               document.getElementById("img5").src = "images2/blog_numpy3_5.png";
                document.getElementById("text5").innerHTML = "Ən böyük və ən kiçik elementləri tapmaq üçün argmax()  və argmin()  funksiyalarından da istifadə edilir. Bu zaman nəticə olaraq elementin özü yox, indeksi qaytarılır. ";
-               document.getElementById("img6").src = "images/blog_numpy3_6.png";
+               document.getElementById("img6").src = "images2/blog_numpy3_6.png";
                document.getElementById("text6").innerHTML = "Massivin sıfır olmayan elementlərini tapmaq üçün nonzero()  funksiyasından istifadə edilir. Bu zaman sıfır olmayan elementlərin indeksini qaytarır.";
-               document.getElementById("img7").src = "images/blog_numpy3_7.png";
+               document.getElementById("img7").src = "images2/blog_numpy3_7.png";
                document.getElementById("text7").innerHTML = "";
                document.getElementById("img8").src = "" ;
                document.getElementById("text8").innerHTML = "";
@@ -292,23 +304,23 @@
                document.getElementById("Info").innerHTML = "NumPy massviləri üzərində riyazi əməllər (part 1)";
                document.getElementById("date_time").innerHTML = "Published on February 08 2022";
                
-               document.getElementById("main_img").src="images/blog_numpy2.jpg"
+               document.getElementById("main_img").src="images2/blog_numpy2.jpg"
                document.getElementById("main_text").innerHTML = "NumPy massivləri üzərində riyazı əməllər etmək üçün ufuncs (Universal Functions) standartından istifadə edilir. Bu standartın daxilində riyazı əməllər üçün çoxlu sayda funksiyalar vardır. Biz bu riyazi əməlləri bu funksiyalardan istifadə etmədən öz funksiyalarımızı qura bilərik, amma bu usul daha geniş imkanlar yaradır.<br><br>Massiv ilə dəyişən arasında riyazi əməllər apardıqda dəyişən hər bir elemetlə ayrılıqda əlaqəyə girir. ";
-               document.getElementById("img2").src = "images/blog_numpy2_2.png";
+               document.getElementById("img2").src = "images2/blog_numpy2_2.png";
                document.getElementById("text2").innerHTML = "Matriksləri toplamaq üçün add() funksiyası istifadə edilir.";
-               document.getElementById("img3").src = "images/blog_numpy2_3.png";
+               document.getElementById("img3").src = "images2/blog_numpy2_3.png";
                document.getElementById("text3").innerHTML = "Toplama əməliyyatı zamanı toplanan massivlərin forması eyni olduqda hər element özünə uyğun elementlə toplanır. Əgər massivlərin fomaları eyni olmasa, bu zaman “bir elementə bir element” qaydası ilə getmək olmur. Aşağıdakı şəkildə massivlərin forması eyni olan və eyni olmayan massivlərə nümunələr verilmişdir. Şəkildən də göründüyü kimi massivlərin formasını böyüdülərək bir-birinə bərabərləşdirilir. Bu zaman funksiya massivlərin formasının mümkün ən kiçik qiymətlərini tapır. Massivlərin formaların bərabərləşdirən zaman funksiya yaranan boş xanaları təkrarlanan elementlərlə doldurur və bir elementə bir element qaydası ilə cəmləyir. Əgər bu sadalan qaydada massivlərin formasını bərabərləşdirmək mümkün olmasa xəta (ValueError:) baş verir. Digər riyazi hesablamalar da bu qaydada həyata keçirilir.";
-               document.getElementById("img4").src = "images/blog_numpy2_4.png";
+               document.getElementById("img4").src = "images2/blog_numpy2_4.png";
                document.getElementById("text4").innerHTML = "Toplama əməlliyyatını sum()  funksiyası ilə də apamq mükündür. Bu funksiya add() funksiyasından fərqli olaraq 2-dən cox massiv qəbul edir. Həmçinin axis  dəyişəninə da malikdir ki, axis=None  olarsa bütün elementlər cəmlənir. İlkin dəyər None- dir. Axisə müəyyən rəqəmlər mənimsətməklə toplamanı müxtəlif kombinasiyalarda aparmaq olar. ";
-               document.getElementById("img5").src = "images/blog_numpy2_5.png";
+               document.getElementById("img5").src = "images2/blog_numpy2_5.png";
                document.getElementById("text5").innerHTML = "Başqa bir cəmləmə üsulu da qismən  toplamadır (Cummulative Sum) . Qismən toplama əməliyyatını yerinə yetirmək üçün cumsum()  funksiyasından istifadə edilir. Bu funksiyanın qəbul etdiyi hər element özündən əvvəlki elementlə cəmlənir. Bu funksiya da sum() fuksiyası kimi birdən çox massiv qəbul edə bilir və axis  dəyişəninə malikdir ki, bu dəyişən sum()  funksiyasının axis i ilə eyni dəyərlər alır.";
-               document.getElementById("img6").src = "images/blog_numpy2_6.png";
+               document.getElementById("img6").src = "images2/blog_numpy2_6.png";
                document.getElementById("text6").innerHTML = "Çıxma əməliyyatı üçün subtract()  funksiyasından istifadə edilir.";
-               document.getElementById("img7").src = "images/blog_numpy2_7.png";
+               document.getElementById("img7").src = "images2/blog_numpy2_7.png";
                document.getElementById("text7").innerHTML = "Massivin elementləri arasında çıxma əməliyyatını yerinə yetirmək üçün diff()  funksiyasından istifadə edilir. Bu funksiya massivin növbəti elementindən əvvəlki elementini çıxır. Aşağıakı nümunəyə baxsaq görərik ki, 15-10=5, 25-15=10, 5-25=-20 və s. ardıcıllığı ilə çıxma əməliyyatı edilib. ";
-               document.getElementById("img8").src = "images/blog_numpy2_8.png";
+               document.getElementById("img8").src = "images2/blog_numpy2_8.png";
                document.getElementById("text8").innerHTML = "Bu funksiya həmçinin n dəyişni də qəbul edir ki, bu dəyişən bu prossesin neçə dəfə təkrarlanacağını göstərir. İlkin dəyəri 1-dir. ";
-               document.getElementById("img9").src = "images/blog_numpy2_9.png";
+               document.getElementById("img9").src = "images2/blog_numpy2_9.png";
                document.getElementById("text9").innerHTML = "";
                document.getElementById("img10").src = "" ;
                document.getElementById("text10").innerHTML = "";
@@ -319,35 +331,35 @@
                document.getElementById("Info").innerHTML = "NumPy massviləri üzərində riyazi əməllər (part 2)";
                document.getElementById("date_time").innerHTML = "Published on February 16 2022";
                
-               document.getElementById("main_img").src = "images/blog_numpy2.jpg"
+               document.getElementById("main_img").src = "images2/blog_numpy2.jpg"
                document.getElementById("main_text").innerHTML = "Vurma əməliyyatını yerinə yetirmək üçün multiply()  funksiyasından istifadə edilir. ";
-               document.getElementById("img2").src = "images/blog_numpy1_2.png";
+               document.getElementById("img2").src = "images2/blog_numpy1_2.png";
                document.getElementById("text2").innerHTML = "Vurma əməliyyatının da toplama əməliyyat kimi əlavə funksiyaları vardır. İstənilən sayda massivin vurulması və axis  dəyişəni ilə nəticənin idarə edilməsi üçün prod() funksiyasından istifadə edilir. ";
-               document.getElementById("img3").src = "images/blog_numpy1_3.png";
+               document.getElementById("img3").src = "images2/blog_numpy1_3.png";
                document.getElementById("text3").innerHTML = "Qismən vurma əməliyyatını yerinə yetirmək üçün cumprod()  funksiyasından istifadə edilir. Bu funksiyanın işləmə prinsipi cumsum()  funksiysı ilə oxşardır.";
-               document.getElementById("img4").src = "images/blog_numpy1_4.png";
+               document.getElementById("img4").src = "images2/blog_numpy1_4.png";
                document.getElementById("text4").innerHTML = "Bölmə əməliyyatını yerinə yetirmək üçün divide()  funksiyasından istifadə edilir. Bu zaman nəticə həqiqi ədəd (float) tipində olur. ";
-               document.getElementById("img5").src = "images/blog_numpy1_5.png";
+               document.getElementById("img5").src = "images2/blog_numpy1_5.png";
                document.getElementById("text5").innerHTML = "Bölmə zamanı qalığı tapmaq üçün mod()  və ya remainder()  funksiyalarından istifadə edilir. ";
-               document.getElementById("img6").src = "images/blog_numpy1_6.png";
+               document.getElementById("img6").src = "images2/blog_numpy1_6.png";
                document.getElementById("text6").innerHTML = "Bölmə zamanı həm qalığı, həm də tam hissəni tapmaq istədikdə divmod()  funksiyasından istifadə edə bilərik. Bu zaman nəticənin birinci massivi tam hissə, ikinci massivi isə qalıqlar olacaqdır. ";
-               document.getElementById("img7").src = "images/blog_numpy1_7.png";
+               document.getElementById("img7").src = "images2/blog_numpy1_7.png";
                document.getElementById("text7").innerHTML = "Qüvvətə yüksəltmək üçün power()  funksiyasından istifadə edilir. Bu funskiyada ikinci massiv birincinin qüvəti olur.";
-               document.getElementById("img8").src = "images/blog_numpy1_8.png";
+               document.getElementById("img8").src = "images2/blog_numpy1_8.png";
                document.getElementById("text8").innerHTML = "Kök alma əməliyyatını almaq üçün power()  funksiyasının ikinci dəyərinə 0 və 1 arası qiymətlər yazmaq lazmdır";
-               document.getElementById("img9").src =  "images/blog_numpy1_9.png";
+               document.getElementById("img9").src =  "images2/blog_numpy1_9.png";
                document.getElementById("text9").innerHTML = "Yuxarıdakı üsuldan əlavə kvadrat kökü tapmağın başqa bir yolu da var. Bu yol üçün sqrt() funksiyasından istifadə edilir. Bu funksiya bir dəyər qəbul etdiyi üçün yuxarıdakı üsuldan daha əlverişlidir.";
-               document.getElementById("img10").src = "images/blog_numpy1_10.png";
+               document.getElementById("img10").src = "images2/blog_numpy1_10.png";
                document.getElementById("text10").innerHTML = "Modulu tapmaq üçün absolute() və ya abs() funksiyalarından istifadə edilir.";
-               document.getElementById("img11").src = "images/blog_numpy1_11.png";
+               document.getElementById("img11").src = "images2/blog_numpy1_11.png";
                document.getElementById("text11").innerHTML = "Massivin elementlərinin ədədi ortasını tapmaq üçün mean()  funksiyasından istifadə edilir. ";
-               document.getElementById("img12").src = "images/blog_numpy1_12.png";
+               document.getElementById("img12").src = "images2/blog_numpy1_12.png";
             }
             else if (name=='Data analizin əsasları'){
                document.getElementById("Info").innerHTML = "Data analizin əsasları";
                document.getElementById("date_time").innerHTML = "Published on January 17 2022";
                
-               document.getElementById("main_img").src = "images/blog_data_analiz.png";
+               document.getElementById("main_img").src = "images2/blog_data_analiz.png";
                document.getElementById("main_text").innerHTML = "Data analizi, iş qərarları qəbul etmək üçün faydalı məlumatları tapmaqdır. Faydalı məlumatları tapmaq məlumatların təmizlənməsi, dəyişdirilməsi və modelləşdirilməsi prosesi kimi müəyyən edilir. Data Analizinin məqsədi məlumatlardan faydalı məlumat əsasında təhlili aarıb qərar qəbul etməkdir.<br><br>Data analizinin sadə bir nümunəsi: gündəlik həyatda hər hansı bir qərara gəlmək üçün son dəfə nələr baş verdiyini və ya bu qərarı seçsək gələcəkdə nələr başverəbiləcəyini düşünməkdir. Bu, keçmişimizi və gələcək xəyallarımızı təhlil etmək və ona əsaslanan qərarlar verməkdən başqa bir şey deyil. Bunun üçün keçmişimizin xatirələrini və ya gələcəyimizin xəyallarını toplayırıq. Data analitikin iş üçün etdiyi bu cür proseslərə Data Analysis deyilir.<br><br>Datalar müxtəlif mənbələr mənbələrdən toplana bilər. Bu mənbələrə yol müşahidə kameraları, peyklər istifadəçi verilənləri, İoT sistemləri, İnternet verilənləri və s. misal göstərilə bilər. <br><br>İlk öncə əldə edilən məlumatlar analiz üçün işlədilməli və ya redaktə edilməlidir. Bu məlumatlar gələcək analizlər üçün elektron cədvəl və ya statistik proqram kimi cədvəl formatında sətir və sütunlara yerləşdirilə bilər.";
                document.getElementById("img2").src = "" ;
                document.getElementById("text2").innerHTML = "Biznes və texnologiyaya əsaslanan bir neçə növ Məlumat Analizi üsulları mövcuddur. Bununla birlikdə, əsas Məlumat Analizi metodları bunlardır: <br><br>- Mətn analizi<br><br>- Statistik analiz<br><br>- Diaqnostik analiz <br><br>- Proqnozlaşdırıcı analiz <br><br>- Təyinatlı analiz";
@@ -374,23 +386,23 @@
                document.getElementById("Info").innerHTML = "Data analiz alətləri";
                document.getElementById("date_time").innerHTML = "Published on January 19 2022";
                
-               document.getElementById("main_img").src = "images/blog_datatool.jpg" ;
+               document.getElementById("main_img").src = "images2/blog_datatool.jpg" ;
                document.getElementById("main_text").innerHTML = "Verilənləri analiz etmək üçün bir çox alətlər vardır. Bunlardan ən çox istifadə edilənləri aşağıdakılardır:<br><br>- R<br><br>-Python<br><br>-Microsoft Excel<br><br>-Tableau<br><br>-Power BI<br><br>-Google Data Studio<br><br>-SAS Business Intelligence";
-               document.getElementById("img2").src = "images/blog_datatool_2.jpg" ;
+               document.getElementById("img2").src = "images2/blog_datatool_2.jpg" ;
                document.getElementById("text2").innerHTML = "R açıq mənbəli proqramlaşdırma dili və statistikaya və qrafik məlumatların vizuallaşdırılmasına diqqət yetirən hesablama mühitidir. R çoxlu qrafik alətləri və verilənlərin yüklənməsi, manipulyasiyası, modelləşdirilməsi və vizuallaşdırılması üçün bir çoxu da daxil olmaqla 15 000-dən çox açıq mənbə paketini təqdim edir. Mühit proqramlaşdırma bacarığı olan texniki analitiklərə demək olar ki, hər cür məlumat təhlili qurmağa imkan verir, lakin proqramlaşdırma bacarıqları olmayan istifadəçilər başqa yerə baxmalıdırlar.";
-               document.getElementById("img3").src = "images/blog_datatool_3.jpg" ;
+               document.getElementById("img3").src = "images2/blog_datatool_3.jpg" ;
                document.getElementById("text3").innerHTML = "Python texniki analitiklər və məlumat alimləri tərəfindən tez-tez istifadə olunan açıq mənbəli, yüksək səviyyəli proqramlaşdırma dilidir. İndi Java-dan daha çox dünya üzrə tərtibatçılara malikdir və 200.000-dən çox mövcud paketə malikdir. Python bir çox müxtəlif analizləri tək başına idarə edə bilər və maşın öyrənməsi və məlumatların vizuallaşdırılması üçün üçüncü tərəf paketləri ilə inteqrasiya edə bilər. Populyar məlumat vizuallaşdırma paketlərinə Matplotlib, Plotly və Seaborn daxildir. Python digər analitik sistemlər üçün proqramlaşdırma interfeysi kimi də istifadə olunur.";
-               document.getElementById("img4").src = "images/blog_datatool_4.jpg" ;
+               document.getElementById("img4").src = "images2/blog_datatool_4.jpg" ;
                document.getElementById("text4").innerHTML = "Microsoft Excel elektron cədvəlləri manipulyasiya etmək və təhlillər qurmaq üçün istifadə edilən ən geniş yayılmış vasitədir. Arxasında onilliklər davam edən inkişaf sayəsində Excel demək olar ki, istənilən standart analitik iş axınını dəstəkləyə bilər və onun doğma proqramlaşdırma dili olan Visual Basic vasitəsilə genişləndirilə bilər. Excel sadə təhlil üçün uyğundur, lakin böyük verilənləri təhlil etmək üçün uyğun deyil - onun təxminən 1 milyon sətr limiti var. Böyük nüəssisələr və birgə təhlillər üçün daha müasir bulud əsaslı analitik platformalar nəzərdən keçirməlidir.";
-               document.getElementById("img5").src = "images/blog_datatool_5.jpg" ;
+               document.getElementById("img5").src = "images2/blog_datatool_5.jpg" ;
                document.getElementById("text5").innerHTML = "Jupyter Notebook Anaconda platforması və ya Python paket meneceri, pip istifadə edərək quraşdırıldıqdan sonra brauzerdə və ya masaüstü platformalarda işlədilə bilən pulsuz, açıq mənbəli veb proqramdır. O, tərtibatçılara canlı koddan verilənlər və vizuallaşdırma ilə hesabatlar yaratmağa imkan verir. Sistem 40-dan çox proqramlaşdırma dilini dəstəkləyir. Jupyter Notebook (əvvəllər IPython Notebook) ilkin olaraq Python istifadə etmək üçün proqramlaşdırılmışdır və tərtibatçılara analitika və vizuallaşdırma üçün Python paketlərinin geniş spektrindən istifadə etməyə imkan verir. Alət digər dillərdən də istifadə edən geniş imkanlara malikdir.";
-               document.getElementById("img6").src = "images/blog_datatool_6.jpg" ;
+               document.getElementById("img6").src = "images2/blog_datatool_6.jpg" ;
                document.getElementById("text6").innerHTML = "Tableau məlumatları asan formatda təhlil etmək və vizuallaşdırmaq üçün istifadə olunan bazarda aparıcı Biznes İntellekt alətidir. Gartner Magic Quadrant 2020-də lider kimi adlandırılan Tableau, ardıcıl səkkizinci ildir ki, sizə canlı verilənlər toplusu üzərində işləməyə və Data Wrangling əvəzinə Data Analizinə daha çox vaxt sərf etməyə imkan verir.<br><br>Tableau Məhsul Ailəsinə aşağıdakılar daxildir:<br><br>- Masa üstü cədvəl<br><br>- Tableau Server<br><br>- Onlayn cədvəl<br><br>- Tableau Reader<br><br>- Tableau Public<br><br>Bütün bunlardan əlavə, Tableau Public pulsuz Tableau proqramıdır və ondan vizuallaşdırmalar etmək üçün istifadə edə bilərsiniz, lakin siz workbook və ya worksheet-ləri hər kəsin baxa biləcəyi Tableau Serverində saxlamalısınız.<br><br>Tableau istifadəçilərə aşağıdakıları təmin etmək üçün tez-tez yeniləmələr təqdim edir:<br><br>- Sürətli Analitika<br><br>- Ağıllı İdarəetmə Panelləri<br><br>- Avtomatik yenilənmə<br><br>- İstifadə rahatlığı<br><br>- İdarə panelini dərc edilməsi və onu internetdə və mobil cihazlarda canlı paylaşılmsı";
-               document.getElementById("img7").src = "images/blog_datatool_7.jpg" ;
+               document.getElementById("img7").src = "images2/blog_datatool_7.jpg" ;
                document.getElementById("text7").innerHTML = "Power BI biznes analitikası üçün istifadə edilən Microsoft məhsuludur. Gartner 2020 Magic Quadrant-da ardıcıl 13-cü il lider olaraq adlandırılan o, özünəxidmət biznes kəşfiyyatı imkanları ilə interaktiv vizualizasiyalar təqdim edir, burada son istifadəçilər heç kimdən asılı olmadan özləri idarə panelləri və hesabatlar yarada bilərlər.<br><br>Power BI aşağıdakı məhsulları təmin edir:<br><br>- Power BI Desktop<br><br>- Power BI Pro<br><br>- Power BI Premium<br><br>- Power BI Mobile<br><br>- Daxili Power BI<br><br>- Power BI Hesabat Serveri<br><br>Bütün bu məhsullar təklif etdikləri funksiyalara görə fərqlənir. Onlardan bir neçəsi müəyyən bir müddət ərzində pulsuzdur və sonra lisenziyalı versiyaları götürməlisiniz.<br><br>Adobe, Heathrow, Worldsmart, GE Healthcare kimi çoxmillətli təşkilatlar öz məlumatlarından güclü nəticələr əldə etmək üçün Power BI-dan istifadə edirlər.<br><br>Power BI bu yaxınlarda istifadəçilərə məlumatları təhlil etməyə, məlumatları birləşdirməyə və müxtəlif Office platformalarında məlumatları qorumağa kömək etmək üçün Azure + Power BI və Office 365 + Power BI kimi həllər təklif etdi.";
-               document.getElementById("img8").src = "images/blog_datatool_8.jpg" ;
+               document.getElementById("img8").src = "images2/blog_datatool_8.jpg" ;
                document.getElementById("text8").innerHTML = "Google Data Studio Google Analytics, Google Ads və Google BigQuery kimi əksər Google tətbiqləri ilə avtomatik inteqrasiya edən ödənişsiz idarə paneli və verilənlərin vizuallaşdırılması vasitəsidir. Digər Google xidmətləri ilə inteqrasiyası sayəsində Data Studio Google məlumatlarını təhlil etmək istəyənlər üçün əladır. Məsələn, marketoloqlar müştərilərin konvertasiyasını və saxlanmasını daha yaxşı başa düşmək üçün Google Ads və Analytics məlumatları üçün idarə panelləri yarada bilərlər.";
-               document.getElementById("img9").src = "images/blog_datatool_9.jpg" ;
+               document.getElementById("img9").src = "images2/blog_datatool_9.jpg" ;
                document.getElementById("text9").innerHTML = "SAS Business Intelligence özünəxidmət analitikası üçün proqramlar dəsti təqdim edir. Hesabatları mobil tətbiqlərə köçürmək kimi bir çox daxili əməkdaşlıq xüsusiyyətlərinə malikdir. SAS Business Intelligence hərtərəfli və çevik platforma olsa da, bəzi rəqiblərindən daha bahalı ola bilər. Böyük müəssisələr çox yönlü olduğuna görə bundan istifadə edir.";
                document.getElementById("img10").src = "" ;
                document.getElementById("text10").innerHTML = "";
@@ -401,7 +413,7 @@
                document.getElementById("Info").innerHTML = "Data tiplər";
                document.getElementById("date_time").innerHTML = "Published on January 22 2022";
                
-               document.getElementById("main_img").src = "images/blog_datatype.png" ;
+               document.getElementById("main_img").src = "images2/blog_datatype.png" ;
                document.getElementById("main_text").innerHTML = "Datanı analiz etmək və ya digər sahələrdə proqram yazmaq üçün data tipləri bilmək vacibdir.  Bu məqalə xüsusi bir dilə uyğun yox, ümumi olaraq data tiplər haqqında yazılıb. Bu məqaləni fərqli dillər istifadə edən proqramistlər və proqramist olmaq istəyənlər oxuya bilər.<br><br>Data tiplər sabitlər və dəyişələr olmaqla iki qrupa ayrılır:<br><br>Sabit data tiplərində yalnız oxuma özəlliyi olur. Bu qrupa daxil olan tiplərə bir dəfə dəyər verilir. Bu dəyər heç bir halda dəyişdirilə bilməz, yalnız oxuna bilər. Bu cür data tiplər pi, e, g kimi sabit dəyərləri istifadə etmək üçün yaradılır.<br><br>Dəyişən data tiplərində həm oxuma, həm dəyişdirmə özəlliyi vardır. Bu tiplər yaradılarkən ilkin dəyər mənimsədilir. Proqramın istənilən yerində bu dəyərdən istifadə edilə və ya bu dəyər dəyişdirilə bilər.<br><br>Qeyd: Bir çox dildə sabit data tipləri istifadə edilmir.<br><br>Data tiplər sadə və mürəkkəb olmaqla iki qruplara ayrılır:<br><br>Sadə (primitive) data tiplərinə aşağıdakılar daxildir:<br><br>Məntiqi (bool və ya boolean) data tipi - Bu verilən tipi iki dəyər qəbul edir. Bu dəyərlər ya doğru ya da yalan olan bilər. Doğru olduqda True (true, 1, HIGH), yalan olduqda isə False (false, 0, LOW) dəyərini qəbul edir. Bir bit yer tutur.<br><br>Qeyd: Məntiqi verlən tipi müxtəlif dillərə görə dəyərlərin mənimsədilmə forması fərqlidir və yuxarıda qeyd edilənlərin birini və ya bir neçəyini qəbul edə bilər.";
                document.getElementById("img2").src = "" ;
                document.getElementById("text2").innerHTML = "Tam ədəd tipi - Bu tip yalnız tam rəqəmləri qəbul edir. Bu tip bit sayına və işarəsinə görə bir çox qrupa bölünür:<br><br>- 8 bitlik müsbət ədələr  0 - 255 aralığında qiymət alır. (byte)<br><br>- 8 bitlik tam ədədlər -128 - 127 aralığında qiymət alır. (sbyte)<br><br>- 16 bitlik müsbət ədələr 0 - 65535 aralığında qiymət alır. (ushort)<br><br>- 16 bitlik tam ədədlər -32 768 - 32 767 aralığında qiymət alır. (short)<br><br>- 32 bitlik müsbət ədələr 0 - 4 294 967 295 aralığında qiymət alır. (uint)<br><br>- 32 bitlik tam ədədlər -2 147 483 648 - 2 147 483 647 aralığında qiymət alır. (int)<br><br>- 64 bitlik müsbət ədələr 0 - 18 446 744 073 709 551 615 aralığında qiymət alır. (ulong)<br><br>- 64 bitlik tam ədədlər -9 223 372 036 854 775 808 - 9 223 372 036 854 775 807 aralığında qiymət alır. (long)";
@@ -424,21 +436,21 @@
                document.getElementById("img11").src = "" ;
                document.getElementById("text12").innerHTML = "";
             }
-            else if (name=='MatPlotLibin plot() funksiyası'){
-               document.getElementById("Info").innerHTML = "MatPlotLib kitabxanasına giriş";
-               document.getElementById("date_time").innerHTML = "Published on February 28 2022";
+            else if (name=='MatPlotLibdə koordinat sisteminin ölçüləndirilməsi'){
+               document.getElementById("Info").innerHTML = "MatPlotLibdə koordinat sisteminin ölçüləndirilməsi ";
+               document.getElementById("date_time").innerHTML = "Published on May 18, 2022";
                
-               document.getElementById("main_img").src = "matplotlib_1.png";
-               document.getElementById("main_text").innerHTML = "";
+               document.getElementById("main_img").src = "images3/blog_plt3.png" ;
+               document.getElementById("main_text").innerHTML = "Koordinat siteminin ilkin görünüşü bizim üçün əlverişli olmaya bilər və bu zaman koordinat sistemini yenidən ölçüləndirə bilərik. Əgər x oxunu ölçüləndirmək istədikdə xlim() funskiyasından istifadə edilir. Bu zaman x koordinatının başlanğıc dəyəri və son dəyəri qeyd edilir. Bu funksiyaya bir dəyər verildikdə funksiya onu başlanğıc qiymət kimi qəbul edir. ";
                document.getElementById("img2").src = "" ;
-               document.getElementById("text2").innerHTML = "";
-               document.getElementById("img3").src = "images/blog_plot_3.png" ;
-               document.getElementById("text3").innerHTML = "";
-               document.getElementById("img4").src = "images/blog_plot_4.png" ;
+               document.getElementById("text2").innerHTML = "Əgər bu prossesi y oxu üçün etmək istəsək ylim()​	 funksiyasından istifadə edirik. Bu funksiya da y-in başlanğıc və son qiymətlərini qəbul edir. ";
+               document.getElementById("img3").src = "images3/blog_plt3_2.png" ;
+               document.getElementById("text3").innerHTML = "Həm x, həm də y oxlarını yenidən ölçüləndirmək lazım olarsa, bu iki funksiyanı alt-alta yazmaq olar, amma daha optimal variant kimi axis()​ funksiyasından istifadə etməkdir. Bu funksiya 4 elementdən ibarət bir ölçülü massiv qəbul edir. Massivin qiymətləri x-in başlanğıc və son qiymətləri, həmçinin y-in baçlanğıc və son qiymətləridir. ";
+               document.getElementById("img4").src ="images3/blog_plt3_3.png" ;
                document.getElementById("text4").innerHTML = "";
-               document.getElementById("img5").src = "images/blog_plot_5.png" ;
+               document.getElementById("img5").src = "" ;
                document.getElementById("text5").innerHTML = "";
-               document.getElementById("img6").src = "images/blog_plot_6.png" ;
+               document.getElementById("img6").src = "" ;
                document.getElementById("text6").innerHTML = "";
                document.getElementById("img7").src = "" ;
                document.getElementById("text7").innerHTML = "";
@@ -451,21 +463,176 @@
                document.getElementById("img11").src = "" ;
                document.getElementById("text12").innerHTML = "";
             }
-            else if (name=='MatPlotLibin plot() funksiyası'){
-               document.getElementById("Info").innerHTML = "MatPlotLib kitabxanasına giriş";
+            else if (name=='Kohort (Cohort) analiz nədir'){
+               document.getElementById("Info").innerHTML = "Kohort (Cohort) analiz nədir";
+               document.getElementById("date_time").innerHTML = "Published on May 25 2022";
+               document.getElementById("main_img").src = "images4/kohort_main.png";
+               document.getElementById("main_text").innerHTML = " Kohort, ortaq bir şeyə sahib olan istifadəçilər toplusudur. Əgər ilk dəfə A müştərisi 1-ci həftədə mağazaya gedirsə və növbəti həftə mağazaya qayıdırsa, o, geri qaytarılmış müştəridir. Əgər B müştərisi də 1-ci həftədə mağazaya gedirsə və gələn həftə geri qayıtmırsa, o, geri çəkilmiş müştəridir, bu, əsasən, siz onu bir istifadəçi kimi itirdiyiniz deməkdir (onu mağazanıza cəlb etmək üçün xərclədiyiniz bütün marketinq pullarına baxmayaraq).<br> Kohort analizi müxtəlif başlanğıc şərtləri nəzərə alınmaqla müxtəlif qruplarda dəyişənlərin necə dəyişdiyini görmək üçün bir texnikadır.<br> Kohortlar aşağıdakı qruplara bölünür:<br> - Zaman kohortları: müəyyən bir müddət ərzində məhsul və ya xidmət üçün qeydiyyatdan keçmiş müştərilər.<br> - Davranış qrupları: keçmişdə məhsul almış və ya xidmətə abunə olmuş müştərilər.<br> - Ölçü kohortları: şirkətin məhsul və ya xidmətlərini satın alan müxtəlif ölçülü müştərilərə istinad edin.<br>Zaman kohortları: istifadəçiləri məhsulunuz üçün ilk dəfə qeydiyyatdan keçdikləri vaxta görə bölür. Tətbiq müştəriləriniz üçün siz kohortlarınızı tətbiqi işə saldıqları günə, həftəyə və ya aya görə bölə və bununla da gündəlik, həftəlik və ya aylıq kohortları izləyə bilərsiniz.<br>Bu halda, bu kohortların saxlanmasını ölçməklə, insanların başlanğıc nöqtəsindən tətbiqinizdən nə qədər istifadə etməyə davam etdiyini müəyyən edə bilərsiniz.<br>Davranış Kohortları: istifadəçiləri müəyyən bir müddət ərzində tətbiqinizdə qəbul etdikləri (və ya etmədikləri) davranışlarına görə bölün. Bunlar istifadəçinin yerinə yetirə biləcəyi istənilən sayda diskret hərəkətlər ola bilər – Tətbiq Quraşdırması, Tətbiqin Başlanması, Proqramın Silinməsi, Əməliyyat və ya Ödənişli və ya bu hərəkətlərin/hadisələrin hər hansı kombinasiyası.<br>Bu halda, kohort müəyyən müddət ərzində, məsələn, tətbiqdən istifadənin ilk 3 günü ərzində müəyyən hərəkətləri edən istifadəçilər qrupu ola bilər. Daha sonra müxtəlif kohortların müəyyən hərəkətləri yerinə yetirdikdən sonra tətbiqinizdə nə qədər aktiv qaldığını izləyə bilərsiniz.<br>Kohort analizi etmək üçün əsas bu dörd ardıcıllıq izlənilməlidir:<br> - Analiz aparacağınız zaman dilimini müəyyən etmək (məs. ay, rüb, il);<br> - Kohort qrupunuzu müəyyən etmək (məs. 2022-ci ildə abunə olanlar);<br> - Məlumatın saxlandığı cədvəli emal olunası vəziyyətə gətirmək;<br> - Analiz alətlərinin seçilməsi.<br>Aşağıdakı nümunə ilə 10 gün ərzində zaman kohort təhlilinə baxaq: ";
+               document.getElementById("img2").src = "images4/kohort_2.png" ;
+               document.getElementById("text2").innerHTML = " Yuxarıdakı kohort cədvəlindən - Üçbucaqlı diaqramdan aşağıdakı nəticəyə gələ bilərik:<br> - Yanvarın 26-da 1358 istifadəçi proqramı işə saldı. 1-ci gün saxlama 31.1%, 7-ci gün saxlama 12.9% və 9-cu gün saxlama 11.3% təşkil etdi. Beləliklə, proqramdan istifadə etdikdən sonra 7-ci gündə, 26 Yanvarda tətbiqi işə salan hər 8 istifadəçidən 1-i hələ də proqramın aktiv istifadəçiləri idi.<br> - Bu müddət ərzində bütün yeni istifadəçilərdən (13.487 istifadəçi) 27%-i 1-ci gündə, 12.5%-i 7-ci gündə, 12.1%-i isə 10-cu gündə saxlanılır.<br>Bu analizin qrafiki aşağıdakı kimi olar. ";
+               document.getElementById("img3").src = "images4/kohort_3.png" ;
+               document.getElementById("text3").innerHTML = " Bu saxlama qrafiki dərhal vacib bir fikri əks etdirir - istifadəçilərin təxminən 75%-i 1-ci gündən sonra proqramdan istifadəni dayandırır. İlkin böyük enişdən sonra 5-ci gündən sonra ikinci sürətli eniş baş verir – 12%-dən aşağı, əyri 7-ci gündən sonra düzləşməyə başlamazdan əvvəl, orijinal istifadəçilərin təxminən 11%-i 10-cu gündə hələ də tətbiqdə aktiv qalır.<br>Yuxarıdakı saxlama əyrisi istifadəçilərin tətbiqin əsas dəyərinə tez çatmadıqlarını və nəticədə proqramın düşməsinə səbəb olduğunu göstərir. Beləliklə, istifadəçini mümkün qədər tez əsas dəyərə çatdırmaq və bununla da saxlama qabiliyyətini artırmaq üçün onboarding təcrübəsini təkmilləşdirmək lazımdır.<br>Davranış Kohortları:<br>Davranış kohortasına sadə bir nümunə ola bilər - məhsulu almadan əvvəl rəyləri oxuyan bütün istifadəçilər. Bu, kimi maraqlı suallara cavab verə bilər:<br>Rəyləri oxuyan istifadəçilər rəyləri oxumayan istifadəçilərdən daha yüksək dönüşüm nisbətinə malikdirlər, yoxsa əksinə.<br>İstifadəçilər daha çox məşğul olurmu – daha uzun sessiyalar, tətbiqdə daha çox vaxt, daha az buraxılış<br>Tətbiq istifadəçisi proqram quraşdırdıqdan və ya işə saldıqdan sonra yüzlərlə qərar qəbul edir və onların qalmaq və ya getmək qərarına səbəb olan saysız-hesabsız kiçik davranışlar nümayiş etdirir. Bu davranışlar hər şey ola bilər, məsələn, Y əsas funksiyasından istifadə, lakin Z əsas funksiyasından istifadə etməmək, yalnız X tipli bildirişlərlə məşğul olmaq və s. ";
+               document.getElementById("img4").src = "images4/kohort_4.png" ;
+               document.getElementById("text4").innerHTML = " Kohort təhlili aşağıdakı suallara cavab ala bilər:<br>Müştərilərlə yenidən əlaqə qurmaq üçün ən yaxşı vaxt nə vaxtdır? Yenidən marketinq üçün ən yaxşı vaxt nə vaxtdır?<br>Tətbiq çevirmə sürətinizi qorumaq (artmazsa) üçün yeni istifadəçilərin əldə etmə nisbəti nədir?<br>Yuxarıdakı saxlama cədvəllərindən belə nəticəyə gələ bilərsiniz ki, alış-veriş səbətini tərk etmiş istifadəçilərin əksəriyyəti, hətta alış tarixindən 1 gün sonra belə, proqramla yenidən əlaqə saxlamayıb. Beləliklə, yeni təkliflə onları yenidən hədəfləmək və gəlir əldə etmək şansınızı artırmaq üçün 24 saatdan az vaxtınız var.<br>Bu məlumatlara əsasən, istifadəçilərin tətbiqinizə necə aşiq ola biləcəyini bilmək üçün sistematik, kəmiyyət yanaşması inkişaf etdirə və sonra bunu təkrar-təkrar həyata keçirə bilərsiniz. Həmçinin, nəyin işlədiyini və nəyin yaramadığını müəyyən etdikdən sonra saxlama qabiliyyətinizi artırmaq üçün strategiyalar hazırlaya bilərsiniz.<br>Kohort təhlilinin gücü ondan ibarətdir ki, o, yalnız hansı müştərilərin ayrıldığını və nə vaxt getdiyini görmək deyil, həm də müştərilərin tətbiqinizi niyə tərk etdiyini anlamağa imkan verir ki, siz onu düzəldə biləsiniz. Beləliklə, istifadəçilərin nə qədər yaxşı saxlanıldığını müəyyən etmək və həmçinin tətbiqin böyüməsini, cəlb edilməsini və gəlirini şərtləndirən əsas amilləri müəyyən etmək olar. ";
+               document.getElementById("img5").src = "" ;
+               document.getElementById("text5").innerHTML = "";
+               document.getElementById("img6").src = "" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "" ;
+               document.getElementById("text7").innerHTML = "";
+               document.getElementById("img8").src = "" ;
+               document.getElementById("text8").innerHTML = "";
+               document.getElementById("img9").src = "" ;
+               document.getElementById("text9").innerHTML = "";
+               document.getElementById("img10").src = "" ;
+               document.getElementById("text10").innerHTML = "";
+               document.getElementById("img11").src = "" ;
+               document.getElementById("text12").innerHTML = "";
+            }
+            else if (name=='Xətti reqressiya'){
+               document.getElementById("Info").innerHTML = "Xətti reqressiya - Linear Regression";
+               document.getElementById("date_time").innerHTML = "Published on May 26 2022";
+               document.getElementById("main_img").src = "images4/ml12.jpg";
+               document.getElementById("main_text").innerHTML = "Bu reqressiya çoxlu sayda (x, y) verilənlər arasında əlaqəni müəyyən edib düz xətt ilə uyğunlaşdırmağa çalışır. Bu xətt reqressiya xətti kimi tanınır və Y= a * X + b xətti tənliyi ilə təmsil olunur.";
+               document.getElementById("img2").src = "images4/ml122.png" ;
+               document.getElementById("text2").innerHTML = " Reqresiya xətti artan istiqamətdə gedirsə bu müsbət xətli reqresiya (y=a*x+b), azalma istiqamətində gedirsə azalan xətli reqresiya (y=-a*x+b) adlanır.<br>Xətti reqressiya iki yerə bölünür:<br> - Sadə xətti reqressiya (Simple Linear Regression) - Bu tip reqresiyada bir dəyişən olur və y-in x-dən asılılığını hesablayır.<br> - Çoxdəyişənli xətti reqressiya (Multiple Linear regression) - Bu tip reqresiyada birdən çox dəyişən olur və ya-in x1, x2, . . . ,xn-dən asılılığını hesablayır. ";
+               document.getElementById("img3").src = "images4/ml13.jpg" ;
+               document.getElementById("text3").innerHTML = " Xətti reqressiya ilə işləyərkən əsas məqsədimiz ən yaxşı uyğun reqressiya xəttini tapmaqdır ki, bu da proqnozlaşdırılan dəyərlər və faktiki dəyərlər arasındakı xətanın minimuma endirilməsi deməkdir. Ən yaxşı reqressiya xəttinin ən az səhvi olacaqdır.<br>Fərqli a və b dəyərləri fərqli reqressiya xətti verir, ona görə də ən yaxşı uyğun xətti tapmaq üçün a və b üçün ən yaxşı dəyərləri hesablamalıyıq, bu hesablamaq üçün xərc (cost) funksiyasından istifadə edilir.<br>Xərc (cost) funksiyası - Xərc funksiyası reqressiya əmsallarını və ya çəkilərini optimallaşdırır. Xətti reqressiya modelinin necə işlədiyini ölçür.<br>Giriş dəyişənini çıxış dəyişəninə uyğunlaşdıran xəritələşdirmə funksiyasının düzgünlüyünü tapmaq üçün xərc funksiyasından istifadə edə bilərik. Bu xəritələşdirmə funksiyası Hipotez funksiyası kimi də tanınır.<br>Xətti reqressiya zamanı proqnozlaşdırılan dəyərlər və faktiki dəyərlər arasında meydana gələn xətanı tapmaq üçün Orta Kvadratik Xəta - Mean Squared Error (MSE) funksiyasından istifadə edilir. Bunu belə yazmaq olar: ";
+               document.getElementById("img4").src = "images4/ml14.png" ;
+               document.getElementById("text4").innerHTML = " n- müşahidələrin sayı.<br>yi- faktiki dəyər.<br>(a1xi+a0)- proqnozlaşdırılan dəyər. axi+b şəklində də yazmaq olar.<br>Qalıqlar - Residuals: Həqiqi dəyərlə proqnozlaşdırılan qiymətlər arasındakı fərq qalıq adlanır. Əgər müşahidə olunan nöqtələr reqressiya xəttindən uzaqdırsa, onda qalıq yüksək olacaq və buna görə də xərc funksiyası yüksək dəyər alacaq. Əgər müşahidə olunan nöqtələr reqressiya xəttinə yaxındırsa, onda qalıq kiçik və buna görə də xərc funksiyası kiçik dəyər alacaq.<br>Qradient enişi - Gradient Descent: Qradient enişi, xərc funksiyasının gradientini hesablayaraq MSE-ni minimuma endirmək üçün istifadə olunur. Reqressiya modeli xərc funksiyasının dəyərini azaltmaqla xəttin əmsallarını yeniləmək üçün gradient enişindən istifadə edir. Bu, əmsal dəyərlərinin təsadüfi seçimi ilə həyata keçirilir və sonra minimum xərc funksiyasına çatmaq üçün dəyərləri daimi yeniləyir.<br>R-kvadrat metodu - R-squared method: Bu metod modelin peformansini ölçmək üçün istifadə edilir. R-kvadrat uyğunluğun yaxşılığını təyin edən statistik bir üsuldur. Asılı və müstəqil dəyişənlər arasındakı əlaqənin gücünü 0-100% aralığında ölçür. R-kvadratının yüksək dəyəri proqnozlaşdırılan dəyərlərlə faktiki dəyərlər arasında daha az fərqi müəyyən edir və buna görə də yaxşı modeli təmsil edir.<br>O, çox dəyişənli reqressiya modellərini də təyin etməyə imkan verir.<br>Aşağıdakı düsturla hesablana bilər: ";
+               document.getElementById("img5").src = "images4/ml15.png" ;
+               document.getElementById("text5").innerHTML = " Xətti reqressiyanın fərziyyələri.<br>Xətti reqressiya quran zaman aşağıdakılara əməl etməklə modeli yaxşılaşdırmaq olar.<br> - Xüsusiyyətlər və hədəf arasında xətti əlaqə: Xətti reqressiya asılı və müstəqil dəyişənlər arasında xətti əlaqəni nəzərdə tutur.<br> - Xüsusiyyətlər arasında multikollinearlığın az olması və ya olmaması: Multikollinearlıq müstəqil dəyişənlər arasında yüksək korrelyasiya deməkdir. Multikollinearlığa görə, proqnozlaşdırıcılar və hədəf dəyişənlər arasında həqiqi əlaqəni tapmaq çətin ola bilər. Və ya deyə bilərik ki, hansı proqnozlaşdırıcı dəyişənin hədəf dəyişənə təsir etdiyini və hansının təsir etmədiyini müəyyən etmək çətindir. Beləliklə, model xüsusiyyətlər və ya müstəqil dəyişənlər arasında çoxlu kollinearlığın ya az olmasını, ya da heç olmamasını nəzərdə tutur.<br> - Homoskedastik Fərziyyə: Homoskedastiklik, xəta termininin müstəqil dəyişənlərin bütün qiymətləri üçün eyni olduğu bir vəziyyətdir. Homoskedastiklik ilə, səpilmə planında məlumatların aydın nümunə paylanması olmamalıdır.<br> - Xəta şərtlərinin normal paylanması: Xətti reqressiya xəta termininin normal paylanma modelinə uyğun olmasını nəzərdə tutur. Xəta şərtləri normal şəkildə paylanmırsa, etimad intervalları ya çox geniş, ya da çox dar olacaq ki, bu da əmsalların tapılmasında çətinliklər yarada bilər. q-q süjetindən istifadə edərək yoxlanıla bilər. Süjetdə heç bir sapma olmadan düz xətt göstərilirsə, bu, xətanın normal şəkildə paylandığını göstərir.<br> - Avtokorrelyasiya yoxdur: Xətti reqressiya modeli xəta baxımından heç bir avtokorrelyasiya qəbul etmir. Xəta terminində hər hansı korrelyasiya olarsa, bu, modelin dəqiqliyini kəskin şəkildə azaldacaq. Avtokorrelyasiya adətən qalıq xətalar arasında asılılıq olduqda baş verir.";
+               document.getElementById("img6").src = "" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "" ;
+               document.getElementById("text7").innerHTML = "";
+               document.getElementById("img8").src = "" ;
+               document.getElementById("text8").innerHTML = "";
+               document.getElementById("img9").src = "" ;
+               document.getElementById("text9").innerHTML = "";
+               document.getElementById("img10").src = "" ;
+               document.getElementById("text10").innerHTML = "";
+               document.getElementById("img11").src = "" ;
+               document.getElementById("text12").innerHTML = "";
+            }
+            else if (name=='Python ilə Sadə Xətti Regressiya'){
+               document.getElementById("Info").innerHTML = "Python ilə Sadə Xətti Regressiya";
+               document.getElementById("date_time").innerHTML = "Published on May 28 2022";
+               document.getElementById("main_img").src = "images4/ml21.png";
+               document.getElementById("main_text").innerHTML = "Sadə Xətti Reqressiya asılı dəyişən və tək müstəqil dəyişən arasındakı əlaqəni modelləşdirən reqressiya alqoritmlərinin bir növüdür. Sadə Xətti Reqressiya modeli ilə göstərilən əlaqə düz xəttdir.<br>Sadə xətti reqressiyanın əsas məqamı ondan ibarətdir ki, asılı dəyişən rəqəm dəyər olmalıdır. Bununla belə, müstəqil dəyişən rəqəm və ya string qiymətlərlə ölçülə bilər.<br>Sadə xətti reqressiya alqoritminin əsas iki məqsədi var:<br>İki dəyişən arasındakı əlaqəni modelləşdirin. Məsələn, gəlir və məxaric, təcrübə və əmək haqqı arasındakı əlaqə və s.<br>Yeni müşahidələrin proqnozlaşdırılması. Məsələn, temperatura görə hava proqnozu, bir il ərzində investisiyalara görə şirkətin gəliri və s.<br>Sadə xətti reqressiyanın tənliyi aşağıdakı kimidir.<br> > y=a0+a1x+ε və ya y=ax+b. Burada a=a1 və b=a0+ε<br>a0 - Reqressiya xəttinin y ilə kəsişdiyi nöqtədir.<br>a1 - Reqressiya xəttinın əyilmə bucağını təyin edir.<br>ε - Xəta termini. (Yaxşı bir model üçün əhəmiyyətsiz olacaq).<br>Sadə xətti reqressiya ilə problem həlli:<br>İki dəyişəni olan məlumat dəstini götürək: əmək haqqı (asılı dəyişən) və təcrübə (müstəqil dəyişən). Bu iki dəyişən arasında hər hansı əlaqənin olub olmadığını öyrənəcəyik. Verilənlər bazası üçün ən uyğun xətti tapacağıq. Müstəqil dəyişəni dəyişdirməklə asılı dəyişən necə dəyişdiyini görəcəyik.<br>Python istifadə edərək Sadə Xətti Reqressiya modelini qurmaq üçün aşağıdakı addımları izləmək lazımdır.<br><br>I) Verilənlərin ilkin emalı.<br>Verilənlərin ilkin emalı üçün aşağıdakı kitabxanaları import edəcəyik.<br> > import numpy as nm <br> > import matplotlib.pyplot as mtp  <br> > import pandas as pd   <br>Pandas kitabxanasının köməyi ilə data set-imizi import edək.<br> > data_set= pd.read_csv('Salary_Data.csv')  <br> > data_set";
+               document.getElementById("img2").src = "images4/ml22.jpg" ;
+               document.getElementById("text2").innerHTML = "Data set-i x və y verilənlərinə bölək. Burada x sərbəst (müstəqil) dəyişən y isə asılı dəyişəndir.<br> > x= data_set.iloc[:, 0].values <br> > y= data_set.iloc[:, 1].values <br>Modeli qurduqdan sonra test edə bilmək üçün verilənlərimizi təlim (train) və test datalarına bölək. test_size dəyişəni verilənlərin neçə faizinin test datasına veriləcəyini bildiri. random_state dəyişənin bölünmənin təsadufi həyata keçirilməsini təmin edir. Təkrarlanan rəqəmlərin yazılması eyni ardıcıllıla bölməni həyata keçiri və bu dəyişən maksimum 42 dəyərini alır.<br> > from sklearn.model_selection import train_test_split <br> > x_train, x_test, y_train, y_test= train_test_split(x, y, test_size= 0.2, random_state=0) <br><br>II) Modelin qurulması.<br>scikit learn kitabxanasından istifadə edərək LinearReqression obyektini yaradırıq və bu oyektə fit funksiyası ilə təlim verilənlərini göndəririk. predict() funksiyası ilə reqreqssiya xəttinin y dəyərlərini yəni nəticəni öyrənirik.<br> > from sklearn.linear_model import LinearRegression <br> > regressor = LinearRegression()  <br> > regressor.fit(x_train, y_train)<br> > y_pred = regressor.predict(x_train)  <br><br>III) Modelin test edilməsi.<br>Təlim və test datasına əsasən modelimizi proqrnozlaşdıra bilərik. Aşağıdakı nümunədə modelin nə qədər optimal olduğunu hesablayır və 0 ilə 1 arasında qiymət alıq. 1 ən optimal hall, 0 isə ən verimsiz haldır və modelə yenidən baxılmaıdır.<br> > print('Train Score: ', regressor.score(x_train, y_train))  <br> > print('Test Score: ', regressor.score(x_test, y_test))  <br><br>IV) Modelin visuallaşdırılması.<br>Paylanmış təlim datasını görmək üçün scatter() və reqressiya xəttini görmək üçün plot() funksiyalarından istifadə edəcəyik.<br> > mtp.scatter(x_train, y_train, color='green')  <br> > mtp.plot(x_train, y_pred, color='red')    <br> > mtp.title('Salary vs Experience (Training Dataset)')  <br> > mtp.xlabel('Years of Experience')  <br> > mtp.ylabel('Salary(In Rupees)')  <br> > mtp.show()  ";
+               document.getElementById("img3").src = "images4/ml23.jpg" ;
+               document.getElementById("text3").innerHTML = " Eyni qayda ilə test datasını da visuallaşdıra bilərik.<br> > mtp.scatter(x_test, y_test, color='blue')  <br> > mtp.plot(x_train, y_pred, color='red')    <br> > mtp.title('Salary vs Experience (Test Dataset)')<br>   > mtp.xlabel('Years of Experience')  <br> > mtp.ylabel('Salary(In Rupees)')  <br> > mtp.show() ";
+               document.getElementById("img4").src = "images4/ml24.jpg"  ;
+               document.getElementById("text4").innerHTML = "İstər təlim datası ilə istərsə də test datası ilə modelimizi yoxladıqda nəticənin optimal həll olduğunu görürük.";
+               document.getElementById("img5").src = "" ;
+               document.getElementById("text5").innerHTML = "";
+               document.getElementById("img6").src = "" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "" ;
+               document.getElementById("text7").innerHTML = "";
+               document.getElementById("img8").src = "" ;
+               document.getElementById("text8").innerHTML = "";
+               document.getElementById("img9").src = "" ;
+               document.getElementById("text9").innerHTML = "";
+               document.getElementById("img10").src = "" ;
+               document.getElementById("text10").innerHTML = "";
+               document.getElementById("img11").src = "" ;
+               document.getElementById("text12").innerHTML = "";
+            }
+            else if (name=='Real data üzərində Linear Reqression'){
+               document.getElementById("Info").innerHTML = "Real data üzərində Linear Reqression";
+               document.getElementById("date_time").innerHTML = "Published on May 31 2022";
+               document.getElementById("main_img").src = "images4/ml31.jpg"
+               document.getElementById("main_text").innerHTML = "Əlimizdəki data set içində taxir və bu tarix ərzində görülən işlərin siyahısı var. Bu data set ilə günlük görülən işlərin sayını və zamana görə dəyişməsini proqnoz edəcəyik.<br>Bunun üçün pandas, matplotlib və numpy kitabxanalarımızı import edək və excelden verilənlərimiz oxuyaq<br> > import pandas as pd <br> > import matplotlib.pyplot as plt <br> > import numpy as np <br> > df=pd.read_excel('work_list.xlsx', sheet_name=1, usecols='F,I') <br> > df";
+               document.getElementById("img2").src = "images4/ml32.jpg" ;
+               document.getElementById("text2").innerHTML = " Gün ərzində nə qədər iş görüldüyünü təyin etmək üçün groupby funksiyasından istifadə edərək verilənlərimizi qruplaşdırıb report no sütunun verilənlərinin sayını tapaq.<br> > df2 = df.groupby(['Submitted Date'])['Report No'].count()<br>Tarix sütununu günlərə bölmək üçün hər gündən ilk günü çıxaq və bunu intigerə çevirək.<br> > min_date = df2.index.min()<br> > df2.index = df2.index-min_date<br> > df2.index = pd.to_numeric(df2.index.days, downcast='integer')<br> > df2";
+               document.getElementById("img3").src = "images4/ml33.jpg";
+               document.getElementById("text3").innerHTML = "Burada index sütunu sərbəst (x) dəyişən, birinci sütun isə asılı (y) dəyişəndir. verilənlərimizi array tipində x və y-ə ötürək test və təlim datasına bölək. Çox ölçülü array problemi ilə üzləşməmək üçün reshape() funksiyasından istifadə edək.<br> > from sklearn.model_selection import train_test_split <br> > x = np.array(df2.index)<br> > y = np.array(df2.values)<br> > x_train, x_test, y_train, y_test = train_test_split(arr_x, arr_y, test_size= 0.2, random_state=0)<br> > x_train = x_train.reshape(-1,1)<br> > y_train = y_train.reshape(-1,1)<br> > x_test = x_test.reshape(-1,1)<br> > y_test = y_test.reshape(-1,1) <br>Təlim datasaı əsaında modelimizi quraq.<br> > from sklearn.linear_model import LinearRegression<br> > regressor= LinearRegression()  <br> > regressor.fit(x_train, y_train)   <br>Modelimizin performansını test edək.<br> > print('Train Score: ', regressor.score(x_train, y_train))<br>  > print('Test  Score: ', regressor.score(x_test, y_test))  <br><br>Output:<br>Train Score:  0.06321548743123906<br>Test  Score:  0.08764306011627898<br>Yuxarıdakı nəticədən göründüyü kimi bu model effektiv model deyil. Təlim və test datalarını vizuallaşdırsaq görərirk ki, verilənlərin paylanması Linear regressiya üçün uyğun deyil.<br> > y_pred = regressor.predict(x_train)  <br> > plt.scatter(x_train, y_train, color = 'green') <br>  > plt.plot(x_train, y_pred, color='red')    <br> > plt.title('Work time vs Day (Training Dataset)')<br>   > plt.xlabel('Days of Experience')  <br> > plt.ylabel('Work time(In Rupees)')  <br> > plt.show()";
+               document.getElementById("img4").src = "images4/ml34.jpg";
+               document.getElementById("text4").innerHTML = "> plt.scatter(x_test, y_test, color = 'green')<br>   > plt.plot(x_train, y_pred, color = 'red')<br>   > plt.title('Work time vs Day (Test Dataset)'')<br>     > plt.xlabel('Days of Experience')  <br>   > plt.ylabel('Work time(In Rupees)'')   <br>   > plt.show()";
+               document.getElementById("img5").src = "images4/ml35.jpg";
+               document.getElementById("text5").innerHTML = "";
+               document.getElementById("img6").src = "" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "" ;
+               document.getElementById("text7").innerHTML = "";
+               document.getElementById("img8").src = "" ;
+               document.getElementById("text8").innerHTML = "";
+               document.getElementById("img9").src = "" ;
+               document.getElementById("text9").innerHTML = "";
+               document.getElementById("img10").src = "" ;
+               document.getElementById("text10").innerHTML = "";
+               document.getElementById("img11").src = "" ;
+               document.getElementById("text12").innerHTML = "";
+            }
+            else if (name=='Hierarchical Clustering'){
+               document.getElementById("Info").innerHTML = "Hierarchical Clustering";
+               document.getElementById("date_time").innerHTML = "Published on June 02 2022";
+               document.getElementById("main_img").src = "images4/ml41.png";
+               document.getElementById("main_text").innerHTML = " Hierarchical Clustering unsupervised machine learning alqoritmasıdır. Verilənlər dəstlərini klasterdə qruplaşdırmaq üçün istifadə olunur və qısaca HCA kimi yazılır.<br>Bu alqoritmdə biz ağac şəklində klasterlərin iyerarxiyasını inkişaf etdiririk və bu ağac formalı struktur dendrogram kimi tanınır.<br>Bəzən K-Means Clustering və Hierarchical Clustering nəticələri oxşar görünə bilər, lakin onların hər ikisi necə işlədiyindən asılı olaraq fərqlənir. Çünki K-Means alqoritmində fərqli olaraq bu alqoritmdə klasterlərin sayını əvvəlcədən müəyyən etmək tələbi yoxdur.<br>İerarxik klasterləşdirmə texnikasına iki yanaşma növü var:<br>Agglomerative: Aqlomerativ aşağıdan yuxarıya yanaşmadır, burada alqoritm ilkin olaraq bütün məlumat nöqtələrini tək klasterlər kimi götürür və onları bir çoxluq qalana qədər birləşdirməyə başlayır.<br>Divisive: Bölmə alqoritmi yuxarıdan aşağıya yanaşma olduğu üçün agglomerative alqoritmin əksidir.<br><br>Agglomerative Hierarchical Clustering necə işləyir?<br>AHC alqoritminin işini aşağıdakı addımlardan istifadə etməklə iş prinsipini izah etmək olar:<br><br>I) Hər bir məlumat nöqtəsini tək klaster kimi yaradır. Tutaq ki, N məlumat nöqtəsi var, ona görə də klasterlərin sayı da N olacaq. ";
+               document.getElementById("img2").src = "images4/ml42.png" ;
+               document.getElementById("text2").innerHTML = "II) Ən yaxın iki məlumat nöqtəsi və ya klaster götürüb bir klaster yaratmaq üçün onları birləşdirir. Beləliklə, klasterlərin biri sayı azalır və indi N-1 sayda klasterlər olur.";
+               document.getElementById("img3").src = "images4/ml43.png" ;
+               document.getElementById("text3").innerHTML = "III) İkinci addımı təkrarlayaraq yenə ən yaxın klasterləri birləşdiririk və N-2 sayda klaster olur.";
+               document.getElementById("img4").src = "images4/ml44.png" ;
+               document.getElementById("text4").innerHTML = "IV) Bu prosesi vahid bir klaster yaranana qədər təkrarlayırıq.";
+               document.getElementById("img5").src = "images4/ml45.png" ;
+               document.getElementById("text5").innerHTML = "";
+               document.getElementById("img6").src = "images4/ml46.png" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "images4/ml47.png" ;
+               document.getElementById("text7").innerHTML = "V) Bütün klasterlər bir böyük klasterdə birləşdirildikdən sonra problemə uyğun olaraq qrupları bölmək üçün dendrogram hazırlayın.<br>Klasterlər arasındakı məsafə aşağıdakı üsullardan biri ilə tapıla bilər:<br>Single Linkage - iki klaster arasındakı ən yaxın məsafəni götürür. ";
+               document.getElementById("img8").src = "images4/ml48.png" ;
+               document.getElementById("text8").innerHTML = "Complete Linkage - iki klaster arasındakı ən uzaq məsafəni götürür.";
+               document.getElementById("img9").src = "images4/ml49.png" ;
+               document.getElementById("text9").innerHTML = " Average Linkage - iki klasterin ədədi ortaları arasındakı məsafəni götürür.<br>Centroid Linkage - iki klasterin mərkəzləri arasındakı məsafəni götürür. ";
+               document.getElementById("img10").src = "images4/ml410.png" ;
+               document.getElementById("text10").innerHTML = " Yuxarıda göstərilən yanaşmalardan problemin növünə və ya biznes tələbinə uyğun olaraq onlardan hər hansı birini tətbiq edə bilərik.<br><br>Hierarchical clusteringda Dendrogramın yaradılması.<br>Dendrogramın x oxu istiqamətində verilənlər vəklasterlər yerləşdirilir. Y oxu istiqamətində isə bu verilənlər və klasterlər arasında məsafə göstərilir. " ;
+               document.getElementById("img11").src= "images4/ml41.png";
+               document.getElementById("text12").innerHTML = " - Yuxarıdakı nümunədə göründüyü kimi ən yaxın məsafə olan P_2 və P_3 ilkin olaraq birləşdirilmişdir.<br> - İkinci addımda isə P_5 ilə P_6 birləşdirilib.<br> - Növbəti addımlarda P_1 ilə (P_2, P_3) və P_4 ilə (P_5, P_6) birləşdirilib.<br> - Sonda isə vahid klaster yaradılıb.<br>Bu algoritmin modelinin pythonla qurulması növbəti patlaşımda olacaqdır. " ;
+            }
+            else if (name=='Təkrarlanmayan təsadufi data yaratmaq'){
+               document.getElementById("Info").innerHTML = "Təkrarlanmayan təsadufi data yaratmaq";
+               document.getElementById("date_time").innerHTML = "Published on September 11 2022";
+               document.getElementById("main_img").src = "images4/db11.png";
+               document.getElementById("main_text").innerHTML = "SQL hazir istifadəyə verdiyi çoxlu sayda funksiyaları olsada bəzən kifayət etmir. Bu hallardan biri də cədvəlin id-sinə və ya başqa bir sütununa təsadufi sabit ölçülü dəyər vermək istədikdə yaranır. Bu işi görən funksiyalar olsa da bu funksiyalar 16 rəqəmdən ibarər dəyər yaradır ki bir çox halda bu dəyər istəniləndən çox ola bilər və sinvolların arasına istənilən sinvolu əlavə etmək və ya çıxartmaq mümkün olmur. ";
+               document.getElementById("img2").src = "images4/db12.PNG" ;
+               document.getElementById("text2").innerHTML = " Yuxarıdakı funksiya verilən ölçüdə string data yarada bilir. Bu funksiyanı PL/pgSQL əsasında yaratmışam və başqa sistemlərdə istifadə etmək istədikdə kiçik dəyişikliklərə ehtiyac duyula bilər. Bu funksiyanın yaxından tanıyan:<br>> select (array[ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])[floor(random() * 62 + 1)] into random_bits;<br>Yuxardakı sorğu ilə qeyd edilən sinvollardan random olaraq biri seçilir. Sinvolları artıra və ya azalda bilərsini. 62 rəqəmi sinvolların sayını bildir. Sinvolların sayı dəyişərsə bu rəqəmi də dəyişməlidir.<br>select column_name into same_out from table_name where column_name =output;<br>Yuxarıda output dəyişəni yaradılmış string dəyəridir və dəyərin yazılacağı cədvəldə bu dəyərin olub-olmadiğini yoxlayır və nəticə same_out dəyişəninə mənimsədilir.<br>> IF same_out IS NULL THEN<br>>   EXIT;<br>> END IF;<br>same_out dəyişəni NULL olarsa yadılan dəyərin təkrarlanmayan dəyər olduğunu göstərir və proqram loopdan çıxaraq dəyəri return edir. Əks halda loopdan çıxmadığı üçün yeni bir dəyər yaradır. Bu dövr təkrarlanmaz dəyər yaradana qədər davam edir. ";
+               document.getElementById("img3").src = "" ;
+               document.getElementById("text3").innerHTML = "";
+               document.getElementById("img4").src = "" ;
+               document.getElementById("text4").innerHTML = "";
+               document.getElementById("img5").src = "" ;
+               document.getElementById("text5").innerHTML = "";
+               document.getElementById("img6").src = "" ;
+               document.getElementById("text6").innerHTML = "";
+               document.getElementById("img7").src = "" ;
+               document.getElementById("text7").innerHTML = "";
+               document.getElementById("img8").src = "" ;
+               document.getElementById("text8").innerHTML = "";
+               document.getElementById("img9").src = "" ;
+               document.getElementById("text9").innerHTML = "";
+               document.getElementById("img10").src = "" ;
+               document.getElementById("text10").innerHTML = "";
+               document.getElementById("img11").src = "" ;
+               document.getElementById("text12").innerHTML = "";
+            }
+            else if (name=='check'){
+               document.getElementById("Info").innerHTML = "name";
                document.getElementById("date_time").innerHTML = "Published on February 28 2022";
-               
-               document.getElementById("main_img").src = "matplotlib_1.png";
+               document.getElementById("main_img").src = "";
                document.getElementById("main_text").innerHTML = "";
                document.getElementById("img2").src = "" ;
                document.getElementById("text2").innerHTML = "";
-               document.getElementById("img3").src = "images/blog_plot_3.png" ;
+               document.getElementById("img3").src = "" ;
                document.getElementById("text3").innerHTML = "";
-               document.getElementById("img4").src = "images/blog_plot_4.png" ;
+               document.getElementById("img4").src = "" ;
                document.getElementById("text4").innerHTML = "";
-               document.getElementById("img5").src = "images/blog_plot_5.png" ;
+               document.getElementById("img5").src = "" ;
                document.getElementById("text5").innerHTML = "";
-               document.getElementById("img6").src = "images/blog_plot_6.png" ;
+               document.getElementById("img6").src = "" ;
                document.getElementById("text6").innerHTML = "";
                document.getElementById("img7").src = "" ;
                document.getElementById("text7").innerHTML = "";
@@ -506,36 +673,42 @@
             }
             
             .right {
-              width: 74%;
+              width: 70%;
             }
+            div.ex1 {
+               
+
+               overflow-x: scroll;
+               }
             
             /* Clear floats after the columns */
             
             </style>
-            </head>
+            
             <body>
             
                
-            
-<div class="row">
-   <div class="column left" style="background-color:#ddd;">
-                
-      <div id="left_main" class="ex1" style="width:20%">
-         
-      </div>
-   </div>
-      <div class="column right" >
-         <div class="Blog-bg">
-            <div class="container">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <div class="Blogheading">
-                              <h3 ><br>My <span class="orange_color">Blog</span></h3>
+               <div class="Blog-bg">
+                  <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="Blogheading">
+                                 <h3 ><br>My <span class="orange_color">Blog</span></h3>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
+<div class="row">
+   
+   <div class="column left" style="background-color:#ddd;">
+                
+      <div id="left_main" class="ex1" style="width:100%">
+         
+      </div>
+   </div>
+      <div class="column right" >
+            
                <style>
                   h2 {text-align: center;}
                   h6 {text-align: center;}
@@ -547,10 +720,11 @@
                   
                   
                   </style>
+                  
                 <div class="w3-panel  w3-round main" >
                   <h2  id=Info></h2>
                   <h6 style="color:#333" id=date_time></h6><br>
-                  <img id="main_img" width="90%" src="images/myblog_animate.gif">
+                  <img id="main_img" width="90%" src="images/blog_animate.gif">
                   <p id=main_text></p><br>
                   <img id="img2" >
                   <p id=text2></p><br>
@@ -575,269 +749,12 @@
                   
                   
                   
-                  
+               
              </div> 
          </div>
       </div>
  
-<!--
-      <div class="section layout_padding dark_bg">
-         
-            
-            <div class="row">
-               <div class="col-md-8 offset-md-2">
-                  <div class="full">
-                     <div class="big_blog">
-                        <img class="img-responsive" src="images/blog_matplotlib1.png" alt="#" />
-                     </div>
-                     </div>
-                     <div class="blog_cont_2">
-                        <h3>MatPlotLibin plot() funksiyası </h3>
-                        <p class="sublittle">March 02 2022</p>
-                        <p>Bu funksiya ilə ilk tanışlığımız öncəki məqalədə oldu. 
-                           plot()  funksiyasına təkcə y qiymətləri də vermək olar ki, 
-                           bu zaman x qiymətlərini avtomatik seçir və hər növbəti qiymət 1 vahid artır. 
-                           Əgər y koordinatına ikidən çox qiymət versək qırıq-qırıq xətlərlə bu nöqtələri birləşdirəcəkdir. 
-                           <span id="points"><button onclick="toggleText()" id="textButton">
-                               > > >
-                          </button> 
-                          </button></span>
-                           <span id="moreText">
-                           Əgər müəyyən bir əyri xətt vermək istəsək, bu zaman x və y dəyərləri bir-birinə yaxın və çoxlu sayda olmalıdır. 
-                           Bu cür olduqda xəttin qırıq olduğunu yox, əyri şəklində bütov bir xətt olduğunu görərik. y=x*x  
-                           funksiyasını qurmaq istədikdə aşağıdakı kimi edə bilərik. Bu zaman x-ə çoxlu sayda, y-ə isə x-in kvadratı qiymətlərini veririk. <button onclick="toggleText()" id="textButton">
-                               < < <
-                          </button> 
 
-
-                        </span>
-                        
-                        </p>
-                        
-                       <script>
-                        function toggleText() {
-                  
-                            // Get all the elements from the page
-                            var points = 
-                                document.getElementById("points");
-                  
-                            var showMoreText =
-                                document.getElementById("moreText");
-                  
-                            var buttonText =
-                                document.getElementById("textButton");
-                  
-                            // If the display property of the dots 
-                            // to be displayed is already set to 
-                            // 'none' (that is hidden) then this 
-                            // section of code triggers
-                            if (points.style.display === "none") {
-                  
-                                // Hide the text between the span
-                                // elements
-                                showMoreText.style.display = "none";
-                  
-                                // Show the dots after the text
-                                points.style.display = "inline";
-                  
-                                // Change the text on button to 
-                                // 'Show More'
-                                buttonText.innerHTML = "> > >";
-                            }
-                  
-                            // If the hidden portion is revealed,
-                            // we will change it back to be hidden
-                            else {
-                  
-                                // Show the text between the
-                                // span elements
-                                showMoreText.style.display = "inline";
-                  
-                                // Hide the dots after the text
-                                points.style.display = "none";
-                  
-                                // Change the text on button
-                                // to 'Show Less'
-                                buttonText.innerHTML = "Show Less";
-                            }
-                        }
-                    </script>
-                     </div> 
-                  </div>
-               </div>
-            
-         </div>
-      </div>
-      <!-- end section -->
-      <!--
-      <style>
-         .avatar2 {
-           vertical-align: middle;
-           width: 800px;
-           height: 140px;
-           
-         }
-         </style>
-
-
-
-<div class="container">
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_matplotlib1.png"  />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-            <h4>MatPlotLibin plot() funksiyası </h4>
-            </a>
-            <h5>March 02 2022</h5>
-
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/matplotlib_1.png" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-            <h4>MatPlotLib kitabxanasına giriş </h4>
-            </a>
-            <h5>February 28 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy1.png" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy massviləri üzərində riyazi əməllər (part 2) </h4>
-               </a>
-               <h5>February 16 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy2.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy massviləri üzərində riyazi əməllər (part 1) </h4>
-               </a>
-               <h5>February 08 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy3.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy massivində axtarış funksiyaları </h4>
-               </a>
-               <h5>February 05 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy4.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy massivində indekslərlə iş </h4>
-               </a>
-               <h5>February 01 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy5.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPyda massivin ölçüsü </h4>
-               </a>
-               <h5>January 29 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy6.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy ilə massivin yaradılması </h4>
-               </a>
-               <h5>January 26 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy7.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>NumPy kitabxanası </h4>
-               </a>
-               <h5>January 24 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy8.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>Data tiplər </h4>
-               </a>
-               <h5>January 22 2022</h5>
-         </div>
-      </div>
-   </div>
-   <br>
-   <div class="row">
-      <div class="col-lg-2 col-md-6">
-         <img  src="images/blog_numpy9.jpg" />
-      </div>
-      <div class="col-lg-10 col-md-6">
-         <div class="full blog_cont">
-            <a href="#">
-               <h4>Data analizin əsasları </h4>
-               </a>
-               <h5>January 17 2022</h5>
-         </div>
-      </div>
-   </div>
-</div>
-      
       
       
       

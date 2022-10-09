@@ -1,154 +1,354 @@
 document.write(`
+
 <style>
-body {
-  margin: 0;
-  font-size: 28px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  body {
+    margin: 0;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
 
-.header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-}
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1;
+  }
 
-#navbar {
-  overflow: hidden;
-  background-color: #333;
-}
+  .header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+  }
 
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  #navbar {
+    overflow: hidden;
+    background-color: rgb(28, 44, 38);
+  }
 
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+  #navbar a {
+    float: left;
+    display: block;
 
-#navbar a.active {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-  background-color: #04AA6D;
-  color: white;
-}
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
-.content {
-  padding: 16px;
-}
+  #navbar a.active {
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+    background-color: #04AA6D;
+    color: white;
+  }
 
-.sticky + .content {
-  padding-top: 60px;
-}
+  .content {
+    padding: 16px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sticky+.content {
+    padding-top: 60px;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  * {
+    box-sizing: border-box
+  }
+
+  .mySlides {
+    display: None
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+      font-size: 11px
+    }
+  }
+
+  .image_left {
+    position: relative;
+    left: 48%;
+  }
+
+
+
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+  }
+
+  button::before {
+    content: '';
+
+
+
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+
+  .button:hover,
+  .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+
+  button:hover::before,
+  button:focus::before {
+    opacity: 1;
+  }
+
+  .btn::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+
+  button:hover::after,
+  button:focus::after {
+    animation: none;
+    display: none;
+  }
+
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+  }
 </style>
-<style>
-   .avatar {
-               vertical-align: middle;
-               width: 100px;
-               height: 100px;
-               border-radius: 50%;
-             }
-</style>
+
+
+
+
 
 <div class="header">
-   <img src="images/my_foto_1.jpg" alt="Avatar" class="avatar">
-   <h2>Idrak Asadbayli</h2>
-   <p>Data processing specialist</p>
- </div>
-<div id="navbar" style="z-index: 1">
-   
-   <div id="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="proje.html">My projects</a></li>
-      <li><a href="blog.html">My Blog</a></li>
-      <li><a href="#footer">Contact Me</a></li>
-      <li><a href="about.html">About me</a></li>
-   </div>
- </div>
-
- <script>
-   window.onscroll = function() {myFunction()};
-   
-   var navbar = document.getElementById("navbar");
-   var sticky = navbar.offsetTop;
-   
-   function myFunction() {
-     if (window.pageYOffset >= sticky) {
-       navbar.classList.add("sticky")
-     } else {
-       navbar.classList.remove("sticky");
-     }
-   }
-   </script>
-
-
-<!--
-
-<div class="navbar">
-<div class="container-fluid " >
-    <div class="row ">
-       <div class="col-lg-3 logo_section ">
-          <style>
-             .avatar {
-               vertical-align: middle;
-               width: 120px;
-               height: 120px;
-               border-radius: 50%;
-             }
-             </style>
-               
-             <img src="images/my_foto_1.jpg" alt="Avatar" class="avatar">
-          
-       </div>
-       <div class="col-lg-9">
-          <div class="menu-area">
-             <div class="limit-box">
-                <nav class="main-menu">
-                   <ul class="menu-area-main">
-                      <li class="active">
-                         <a href="index.html">Home</a>
-                      </li>
-                      <li>
-                         <a href="proje.html">My projects</a>
-                      </li>
-                      <!--
-                      <li>
-                         <a href="test.html">Programming test</a>
-                      </li>
-                     -->
-                     <!--
-                      <li>
-                         <a href="blog.html">Blog</a>
-                      </li>
-                      <li>
-                         <a href="#footer">Contact Me</a>
-                      </li>
-                      <li>
-                         <a href="about.html">About me</a>
-                      </li>
-                      
-                      <li>
-                        <!-- <a href="#"><img src="images/search_icon.png" alt="#" /></a>-->
-                        <!--
-                      </li>
-                   </ul>
-                </nav>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
+  <img src="images/my_foto_1.jpg" alt="Avatar" class="avatar">
+  <h2>Idrak Asadbayli</h2>
+  <p>Data Engineer</p>
 </div>
--->
- `)
+<div id="navbar" style="z-index: 1">
+
+
+
+  <div id="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="recommendation.html">Recommendation</a></li>
+    <li><a href="proje.html">My Projects</a></li>
+    <li><a href="blog.html">My Blog</a></li>
+    <!-- <li><a href="question.html">Question Time</a></li> -->
+    <!-- <li><a href="#">My Gallery</a></li> -->
+
+
+    <li><a href="#footer">Contact Me</a></li>
+
+  </div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="images/top.jpg" width="80" /></button>
+<script>
+  window.onscroll = function () { myFunction() };
+
+  var navbar = document.getElementById("navbar");
+  var mybutton = document.getElementById("myBtn");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+      mybutton.style.display = "block";
+
+
+    } else {
+      navbar.classList.remove("sticky");
+      mybutton.style.display = "none";
+
+
+    }
+
+  }
+
+
+
+
+</script>
+
+<script>
+  //Get the button
+
+
+  // When the user scrolls down 20px from the top of the document, show the button
+
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+`)
